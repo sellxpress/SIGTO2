@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2C8A713-3152-44FC-8379-73D3C45DB203}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CapaPresentacion</RootNamespace>
+    <AssemblyName>CapaPresentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackOffice\FrmConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmConfiguracion.Designer.cs">
+      <DependentUpon>FrmConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\FrmConfiguracion2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmConfiguracion2.Designer.cs">
+      <DependentUpon>FrmConfiguracion2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\FrmGestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmGestionUsuarios.Designer.cs">
+      <DependentUpon>FrmGestionUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\FrmGestionUsuarios2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmGestionUsuarios2.Designer.cs">
+      <DependentUpon>FrmGestionUsuarios2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\FrmMonitorearActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmMonitorearActividad.Designer.cs">
+      <DependentUpon>FrmMonitorearActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\FrmMonitorearActividad2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmMonitorearActividad2.Designer.cs">
+      <DependentUpon>FrmMonitorearActividad2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmCarrito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmCarrito.Designer.cs">
+      <DependentUpon>FrmCarrito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmCarrito2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmCarrito2.Designer.cs">
+      <DependentUpon>FrmCarrito2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmCompras.Designer.cs">
+      <DependentUpon>FrmCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmCompras2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmCompras2.Designer.cs">
+      <DependentUpon>FrmCompras2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmMiUsuarioDireccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmMiUsuarioDireccion.Designer.cs">
+      <DependentUpon>FrmMiUsuarioDireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmMiUsuarioDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmMiUsuarioDatos.Designer.cs">
+      <DependentUpon>FrmMiUsuarioDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmNavegar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmNavegar.Designer.cs">
+      <DependentUpon>FrmNavegar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmNavegar2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmNavegar2.Designer.cs">
+      <DependentUpon>FrmNavegar2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmRegistroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmRegistroCliente.Designer.cs">
+      <DependentUpon>FrmRegistroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmMiUsuarioEleccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmMiUsuarioEleccion.Designer.cs">
+      <DependentUpon>FrmMiUsuarioEleccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmReseñas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmReseñas.Designer.cs">
+      <DependentUpon>FrmReseñas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmReseñas2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmReseñas2.Designer.cs">
+      <DependentUpon>FrmReseñas2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmMiEmpresaDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmMiEmpresaDatos.Designer.cs">
+      <DependentUpon>FrmMiEmpresaDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmPedidosEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmPedidosEmpresa.Designer.cs">
+      <DependentUpon>FrmPedidosEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmPedidosEmpresa2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmPedidosEmpresa2.Designer.cs">
+      <DependentUpon>FrmPedidosEmpresa2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmProductos.Designer.cs">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmProductos2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmProductos2.Designer.cs">
+      <DependentUpon>FrmProductos2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmPromocionesEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmPromocionesEmpresa.Designer.cs">
+      <DependentUpon>FrmPromocionesEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmPromocionesEmpresa2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmPromocionesEmpresa2.Designer.cs">
+      <DependentUpon>FrmPromocionesEmpresa2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmVentasEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmVentasEmpresa.Designer.cs">
+      <DependentUpon>FrmVentasEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmVentasEmpresa2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmVentasEmpresa2.Designer.cs">
+      <DependentUpon>FrmVentasEmpresa2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistroEleccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistroEleccion.Designer.cs">
+      <DependentUpon>FrmRegistroEleccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmRegistroEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmRegistroEmpresa.Designer.cs">
+      <DependentUpon>FrmRegistroEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmMenuCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmMenuCliente.Designer.cs">
+      <DependentUpon>FrmMenuCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmMenuEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmMenuEmpresa.Designer.cs">
+      <DependentUpon>FrmMenuEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\FrmMenuBackOffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmMenuBackOffice.Designer.cs">
+      <DependentUpon>FrmMenuBackOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Cliente\FrmMiUsuarioDireccion.resx">
+      <DependentUpon>FrmMiUsuarioDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FrmMiUsuarioDatos.resx">
+      <DependentUpon>FrmMiUsuarioDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FrmRegistroCliente.resx">
+      <DependentUpon>FrmRegistroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\FrmMiEmpresaDatos.resx">
+      <DependentUpon>FrmMiEmpresaDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FrmMenuCliente.resx">
+      <DependentUpon>FrmMenuCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\FrmMenuEmpresa.resx">
+      <DependentUpon>FrmMenuEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackOffice\FrmMenuBackOffice.resx">
+      <DependentUpon>FrmMenuBackOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FrmMiUsuarioEleccion.resx">
+      <DependentUpon>FrmMiUsuarioEleccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistroEleccion.resx">
+      <DependentUpon>FrmRegistroEleccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\FrmRegistroEmpresa.resx">
+      <DependentUpon>FrmRegistroEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
+      <Project>{d1ac29d0-23fe-4372-ba22-67327ddcd007}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{2480339e-39c6-4df7-b542-a3ce12eac6a8}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoEmpresaGrandeYMasLiso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoEmpresaSinFondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoC#.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoEmpresaSinFondo12.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
