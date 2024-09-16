@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
-using CapaDatos;
+    
 
-namespace CapaLogica
+/*namespace CapaLogica
 {
     class Articulo
     {
@@ -54,3 +54,4 @@ namespace CapaLogica
             }
         }
 }
+*/

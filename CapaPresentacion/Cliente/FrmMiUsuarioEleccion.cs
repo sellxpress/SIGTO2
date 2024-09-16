@@ -69,7 +69,9 @@ namespace CapaPresentacion
 
         private void btnSalir_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            Form formulario = new FrmMenuCliente();
+            formulario.Show();
         }
 
         private void txtRut_TextChanged(object sender, EventArgs e)
@@ -137,9 +139,9 @@ namespace CapaPresentacion
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form formulario = new FrmMenuCliente();
             formulario.Show();
-            this.Hide();
         }
     }
 }

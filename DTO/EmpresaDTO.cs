@@ -27,6 +27,16 @@ namespace CapaLogica
             this.descripcion = descripcion;
 
         }
-       
+
+        public string Rut { get { return this.rut; } }
+        public string Nombre { get { return this.nombre; } }
+        public string Correo { get { return this.correo; } }
+        public string Contra { get { return this.contra; } }
+        public string Nroventas { get { return this.nroventas; } }
+        public string Logo { get { return this.logo; } }
+        public string Descripcion { get { return this.descripcion; } }
+
+
+
     }
 }

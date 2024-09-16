@@ -28,5 +28,14 @@ namespace CapaLogica
             this.nrocelular = nrocelular;
             this.foto = foto;
         }
+        public string Correo { get { return this.correo; } }
+        public string Ci { get { return this.ci; } }
+        public string Nombre { get { return this.nombre; } }
+        public string Apellido { get { return this.apellido; } }
+        public string Contra { get { return this.contra; } }
+        public string Fechanac { get { return this.fechanac; } }
+        public string Nrocelular { get { return this.nrocelular; } }
+        public string Foto { get { return this.foto; } }
+
     }
 }

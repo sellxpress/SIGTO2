@@ -8,7 +8,7 @@ using CapaDatos;
 
 namespace CapaLogica
 {
-    class Persona
+     public  class Persona
     {
         private string correo;
         private string ci;
@@ -20,7 +20,7 @@ namespace CapaLogica
         private string foto;
 
 
-        public Persona(string correo, string ci, string nombre, string apellido, string contra, string fechanac, string nrocelular, string foto)
+        public Persona(string correo, string ci, string nombre, string apellido, string contra, string fechanac, string nrocelular, string foto = "0")
         {
             this.correo = correo;
             this.ci = ci;

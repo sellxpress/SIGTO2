@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaDatos;
-namespace CapaLogica
+
+
+/*namespace CapaLogica
 {
     public class DireccionCliente
     {
@@ -45,3 +46,4 @@ namespace CapaLogica
         }
     }
 }
+*/

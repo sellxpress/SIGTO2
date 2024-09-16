@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DTO;
 using CapaDatos;
 
+
 namespace CapaLogica
 {
     public class Carrito
@@ -27,15 +28,15 @@ namespace CapaLogica
         {
             CarritoDTO cDto = MapearCarritoDTO();
             Datos d = new Datos();
-            int filas = d.insertarCarrito(cDto);
-            if (filas > 0)
-            {
-                //Se logro la consulta
-            }
-            else
-            {
-                //No se logro
-            }
+            /*  int filas = d.insertarCarrito(cDto);
+               if (filas > 0)
+              {
+                  //Se logro la consulta
+              } 
+              else
+              {
+                  //No se logro
+              } */
         }
         public CarritoDTO MapearCarritoDTO()
         {

@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using CapaLogica;
 
 namespace CapaPresentacion
 {
@@ -85,6 +86,26 @@ namespace CapaPresentacion
         private static extern void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         #endregion "Controlar la ventana"
+
+
+        #region "PruebaRegistro"
+        private bool Registro()
+        {
+            bool ok = true;
+            if (txtNombre.Text == "" && txtApellido.Text == "" && txtEmail.Text == "" && txtContraseña.Text == "" && txtCedula.Text == "" && txtNroTelefonico.Text == "" && txtFechaNac.Text == "")
+            {
+                ok = false;
+                ValidarCampos();
+            }
+            else
+            {
+                Form formulario = new FrmLogin();
+                formulario.Show();
+                this.Hide();
+            }
+            return ok;
+        }
+        #endregion
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
@@ -191,8 +212,8 @@ namespace CapaPresentacion
             string contra = txtContraseña.Text;
             string fechanac = txtFechaNac.Text;
             string nrocelular = txtNroTelefonico.Text;
-           CapaLogica.PersonaDTO user = new Persona(correo,ci,nombre,apellido,contra,fechanac,nrocelular);
-            user.insertarPersona();
+            Persona unaPersona = new Persona(correo, ci, nombre, apellido, contra, fechanac, nrocelular);
+            unaPersona.insertarPersona();
             EliminarError();
             ValidarCampos();
         }

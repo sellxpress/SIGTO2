@@ -36,10 +36,17 @@ namespace CapaPresentacion
             this.lblId = new System.Windows.Forms.Label();
             this.lblDescripcionMM = new System.Windows.Forms.Label();
             this.lblEmailM = new System.Windows.Forms.Label();
+            this.lblNombreM = new System.Windows.Forms.Label();
             this.lblDescripcion1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.ilMiUsuarioDatos = new System.Windows.Forms.ImageList(this.components);
             this.pnlDerecha = new System.Windows.Forms.Panel();
+            this.btnImagen = new System.Windows.Forms.Button();
+            this.lblLogo = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtRUT = new System.Windows.Forms.TextBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.txtContraseñaAct = new System.Windows.Forms.TextBox();
             this.lblContraseñaAct = new System.Windows.Forms.Label();
@@ -55,13 +62,6 @@ namespace CapaPresentacion
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
-            this.txtRUT = new System.Windows.Forms.TextBox();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.btnImagen = new System.Windows.Forms.Button();
-            this.lblLogo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblNombreM = new System.Windows.Forms.Label();
             this.pnlContenido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBLogo)).BeginInit();
             this.pnlDerecha.SuspendLayout();
@@ -133,6 +133,17 @@ namespace CapaPresentacion
             this.lblEmailM.TabIndex = 82;
             this.lblEmailM.Text = "*email";
             // 
+            // lblNombreM
+            // 
+            this.lblNombreM.AutoSize = true;
+            this.lblNombreM.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.lblNombreM.Location = new System.Drawing.Point(257, 53);
+            this.lblNombreM.Name = "lblNombreM";
+            this.lblNombreM.Size = new System.Drawing.Size(59, 16);
+            this.lblNombreM.TabIndex = 79;
+            this.lblNombreM.Text = "*nombre";
+            // 
             // lblDescripcion1
             // 
             this.lblDescripcion1.AutoSize = true;
@@ -155,6 +166,17 @@ namespace CapaPresentacion
             this.label5.Size = new System.Drawing.Size(67, 23);
             this.label5.TabIndex = 76;
             this.label5.Text = "E-mail";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.label2.Location = new System.Drawing.Point(256, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 23);
+            this.label2.TabIndex = 73;
+            this.label2.Text = "Nombre";
             // 
             // ilMiUsuarioDatos
             // 
@@ -194,6 +216,66 @@ namespace CapaPresentacion
             this.pnlDerecha.Size = new System.Drawing.Size(477, 363);
             this.pnlDerecha.TabIndex = 8;
             // 
+            // btnImagen
+            // 
+            this.btnImagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.btnImagen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImagen.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImagen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnImagen.Location = new System.Drawing.Point(269, 151);
+            this.btnImagen.Name = "btnImagen";
+            this.btnImagen.Size = new System.Drawing.Size(182, 32);
+            this.btnImagen.TabIndex = 79;
+            this.btnImagen.Text = "Cargar Imagen";
+            this.btnImagen.UseVisualStyleBackColor = false;
+            this.btnImagen.Click += new System.EventHandler(this.btnImagen_Click);
+            // 
+            // lblLogo
+            // 
+            this.lblLogo.AutoSize = true;
+            this.lblLogo.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.lblLogo.Location = new System.Drawing.Point(266, 129);
+            this.lblLogo.Name = "lblLogo";
+            this.lblLogo.Size = new System.Drawing.Size(45, 19);
+            this.lblLogo.TabIndex = 78;
+            this.lblLogo.Text = "Logo";
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.lblDescripcion.Location = new System.Drawing.Point(40, 183);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(95, 19);
+            this.lblDescripcion.TabIndex = 77;
+            this.lblDescripcion.Text = "Descripcion";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtDescripcion.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(43, 205);
+            this.txtDescripcion.MaxLength = 200;
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(408, 95);
+            this.txtDescripcion.TabIndex = 76;
+            // 
+            // txtRUT
+            // 
+            this.txtRUT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.txtRUT.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRUT.Location = new System.Drawing.Point(42, 37);
+            this.txtRUT.MaxLength = 12;
+            this.txtRUT.Name = "txtRUT";
+            this.txtRUT.ReadOnly = true;
+            this.txtRUT.Size = new System.Drawing.Size(182, 21);
+            this.txtRUT.TabIndex = 73;
+            // 
             // btnConfirmar
             // 
             this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(135)))), ((int)(((byte)(35)))));
@@ -207,6 +289,7 @@ namespace CapaPresentacion
             this.btnConfirmar.TabIndex = 72;
             this.btnConfirmar.Text = "Realizar cambios";
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // txtContraseñaAct
             // 
@@ -371,88 +454,6 @@ namespace CapaPresentacion
             this.btnSalir.TabIndex = 66;
             this.btnSalir.TabStop = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // txtRUT
-            // 
-            this.txtRUT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.txtRUT.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRUT.Location = new System.Drawing.Point(42, 37);
-            this.txtRUT.MaxLength = 12;
-            this.txtRUT.Name = "txtRUT";
-            this.txtRUT.ReadOnly = true;
-            this.txtRUT.Size = new System.Drawing.Size(182, 21);
-            this.txtRUT.TabIndex = 73;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.txtDescripcion.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(43, 205);
-            this.txtDescripcion.MaxLength = 200;
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(408, 95);
-            this.txtDescripcion.TabIndex = 76;
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.lblDescripcion.Location = new System.Drawing.Point(40, 183);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(95, 19);
-            this.lblDescripcion.TabIndex = 77;
-            this.lblDescripcion.Text = "Descripcion";
-            // 
-            // btnImagen
-            // 
-            this.btnImagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnImagen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImagen.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImagen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnImagen.Location = new System.Drawing.Point(269, 151);
-            this.btnImagen.Name = "btnImagen";
-            this.btnImagen.Size = new System.Drawing.Size(182, 32);
-            this.btnImagen.TabIndex = 79;
-            this.btnImagen.Text = "Cargar Imagen";
-            this.btnImagen.UseVisualStyleBackColor = false;
-            this.btnImagen.Click += new System.EventHandler(this.btnImagen_Click);
-            // 
-            // lblLogo
-            // 
-            this.lblLogo.AutoSize = true;
-            this.lblLogo.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.lblLogo.Location = new System.Drawing.Point(266, 129);
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(45, 19);
-            this.lblLogo.TabIndex = 78;
-            this.lblLogo.Text = "Logo";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label2.Location = new System.Drawing.Point(256, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 23);
-            this.label2.TabIndex = 73;
-            this.label2.Text = "Nombre";
-            // 
-            // lblNombreM
-            // 
-            this.lblNombreM.AutoSize = true;
-            this.lblNombreM.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblNombreM.Location = new System.Drawing.Point(257, 53);
-            this.lblNombreM.Name = "lblNombreM";
-            this.lblNombreM.Size = new System.Drawing.Size(59, 16);
-            this.lblNombreM.TabIndex = 79;
-            this.lblNombreM.Text = "*nombre";
             // 
             // FrmMiEmpresaDatos
             // 

@@ -154,59 +154,11 @@
     <Compile Include="Cliente\FrmReseñas2.Designer.cs">
       <DependentUpon>FrmReseñas2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empresa\FrmMiEmpresaDatos.cs">
+    <Compile Include="Empresa1\FrmMiEmpresaDatos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empresa\FrmMiEmpresaDatos.Designer.cs">
+    <Compile Include="Empresa1\FrmMiEmpresaDatos.Designer.cs">
       <DependentUpon>FrmMiEmpresaDatos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empresa\FrmPedidosEmpresa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empresa\FrmPedidosEmpresa.Designer.cs">
-      <DependentUpon>FrmPedidosEmpresa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empresa\FrmPedidosEmpresa2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empresa\FrmPedidosEmpresa2.Designer.cs">
-      <DependentUpon>FrmPedidosEmpresa2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empresa\FrmProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empresa\FrmProductos.Designer.cs">
-      <DependentUpon>FrmProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empresa\FrmProductos2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empresa\FrmProductos2.Designer.cs">
-      <DependentUpon>FrmProductos2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empresa\FrmPromocionesEmpresa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empresa\FrmPromocionesEmpresa.Designer.cs">
-      <DependentUpon>FrmPromocionesEmpresa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empresa\FrmPromocionesEmpresa2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empresa\FrmPromocionesEmpresa2.Designer.cs">
-      <DependentUpon>FrmPromocionesEmpresa2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empresa\FrmVentasEmpresa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empresa\FrmVentasEmpresa.Designer.cs">
-      <DependentUpon>FrmVentasEmpresa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empresa\FrmVentasEmpresa2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empresa\FrmVentasEmpresa2.Designer.cs">
-      <DependentUpon>FrmVentasEmpresa2.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRegistroEleccion.cs">
       <SubType>Form</SubType>
@@ -214,10 +166,10 @@
     <Compile Include="FrmRegistroEleccion.Designer.cs">
       <DependentUpon>FrmRegistroEleccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empresa\FrmRegistroEmpresa.cs">
+    <Compile Include="Empresa1\FrmRegistroEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empresa\FrmRegistroEmpresa.Designer.cs">
+    <Compile Include="Empresa1\FrmRegistroEmpresa.Designer.cs">
       <DependentUpon>FrmRegistroEmpresa.cs</DependentUpon>
     </Compile>
     <Compile Include="Cliente\FrmMenuCliente.cs">
@@ -226,10 +178,10 @@
     <Compile Include="Cliente\FrmMenuCliente.Designer.cs">
       <DependentUpon>FrmMenuCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empresa\FrmMenuEmpresa.cs">
+    <Compile Include="Empresa1\FrmMenuEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empresa\FrmMenuEmpresa.Designer.cs">
+    <Compile Include="Empresa1\FrmMenuEmpresa.Designer.cs">
       <DependentUpon>FrmMenuEmpresa.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
@@ -255,7 +207,7 @@
     <EmbeddedResource Include="Cliente\FrmRegistroCliente.resx">
       <DependentUpon>FrmRegistroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empresa\FrmMiEmpresaDatos.resx">
+    <EmbeddedResource Include="Empresa1\FrmMiEmpresaDatos.resx">
       <DependentUpon>FrmMiEmpresaDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
@@ -264,7 +216,7 @@
     <EmbeddedResource Include="Cliente\FrmMenuCliente.resx">
       <DependentUpon>FrmMenuCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empresa\FrmMenuEmpresa.resx">
+    <EmbeddedResource Include="Empresa1\FrmMenuEmpresa.resx">
       <DependentUpon>FrmMenuEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BackOffice\FrmMenuBackOffice.resx">
@@ -276,7 +228,7 @@
     <EmbeddedResource Include="FrmRegistroEleccion.resx">
       <DependentUpon>FrmRegistroEleccion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empresa\FrmRegistroEmpresa.resx">
+    <EmbeddedResource Include="Empresa1\FrmRegistroEmpresa.resx">
       <DependentUpon>FrmRegistroEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

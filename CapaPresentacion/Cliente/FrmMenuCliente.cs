@@ -26,9 +26,10 @@ namespace CapaPresentacion
 
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
+            this.Close();
             Form formulario = new FrmLogin();
             formulario.Show();
-            this.Hide();
+
         }
 
         private void pnlTitulo_Paint(object sender, PaintEventArgs e)

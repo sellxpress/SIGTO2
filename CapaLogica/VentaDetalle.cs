@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
-using CapaDatos;
 
-namespace CapaLogica
+/*namespace CapaLogica
 {
     public class VentaDetalle
     {
@@ -47,3 +46,4 @@ namespace CapaLogica
         }
     }
 }
+*/

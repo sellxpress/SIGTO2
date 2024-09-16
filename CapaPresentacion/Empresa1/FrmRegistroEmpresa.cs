@@ -79,14 +79,32 @@ namespace CapaPresentacion
 
         #endregion "Placeholder"
 
+        #region "PruebaRegistro"
+        private bool Registro()
+        {
+            bool ok = true;
+            if (txtNombre.Text == "" && txtRut.Text == "" && txtEmail.Text == "" && txtContraseña.Text == "")
+            {
+                ok = false;
+                ValidarCampos();
+            }
+            else
+            {
+                Form formulario = new FrmLogin();
+                formulario.Show();
+                this.Hide();
+            }
+            return ok;
+        }
+        #endregion
         private void button1_Click(object sender, EventArgs e)
         {
             string rut = txtRut.Text;
             string nombre = txtNombre.Text;
             string correo = txtEmail.Text;
             string contra = txtContraseña.Text;
-            EmpresaDTO UnaEmpresa = new Empresa (rut, nombre, correo,contra);
-            insertarEmpresa();
+            Empresa unaEmpresa = new Empresa (rut, nombre, correo,contra);
+            unaEmpresa.insertarEmpresa();
             EliminarError();
             ValidarCampos();
         }

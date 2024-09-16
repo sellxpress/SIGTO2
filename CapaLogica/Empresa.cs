@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DTO;
 using CapaDatos;
 
+
 namespace CapaLogica
 {
     public class Empresa
@@ -18,7 +19,7 @@ namespace CapaLogica
         private string logo;
         private string descripcion;
 
-        public Empresa(string rut, string nombre, string correo, string contra, string nroventas, string logo, string descripcion)
+        public Empresa(string rut, string nombre, string correo, string contra, string nroventas = "0", string logo = "0", string descripcion = "0")
         {
             this.rut = rut;
             this.nombre = nombre;

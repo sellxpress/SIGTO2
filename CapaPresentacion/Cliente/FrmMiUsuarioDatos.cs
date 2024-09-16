@@ -12,9 +12,9 @@ namespace CapaPresentacion
 
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form formulario = new FrmLogin();
             formulario.Show();
-            this.Hide();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -24,7 +24,9 @@ namespace CapaPresentacion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            Form formulario = new FrmMiUsuarioEleccion();
+            formulario.Show();
         }
 
         private void pnlTitulo_Paint(object sender, PaintEventArgs e)

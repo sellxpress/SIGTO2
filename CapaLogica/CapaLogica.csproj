@@ -45,6 +45,7 @@
     <Compile Include="Anuncio.cs" />
     <Compile Include="Articulo.cs" />
     <Compile Include="Carrito.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="DireccionCliente.cs" />
     <Compile Include="Empresa.cs" />

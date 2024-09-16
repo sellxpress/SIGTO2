@@ -36,7 +36,7 @@ namespace CapaLogica
         {
             VentaDTO vDto = MapearVentaDTO();
             Datos d = new Datos();
-            int filas = d.insertarVenta(vDto);
+           /*  int filas = d.insertarVenta(vDto);
             if (filas > 0)
             {
                 //Se logro la consulta
@@ -44,7 +44,7 @@ namespace CapaLogica
             else
             {
                 //No se logro
-            }
+            }  */
         }
         public VentaDTO MapearVentaDTO()
         {

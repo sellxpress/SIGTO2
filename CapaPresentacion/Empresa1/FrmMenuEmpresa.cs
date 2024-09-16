@@ -20,6 +20,9 @@ namespace CapaPresentacion
 
         private void button5_Click(object sender, EventArgs e)
         {
+            Form formulario = new FrmMiEmpresaDatos();
+            formulario.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
