@@ -8,18 +8,22 @@ namespace CapaLogica
 {
     public class CarritoDTO
     {
-        private string idcliente;
-        private string cantidadartciulos;
-        private string montototal;
-        private string idarticulo;
+        private int idcliente;
+        private int cantidadarticulos;
+        private decimal montototal;
+        private int idarticulo;
 
-        public CarritoDTO(string idcliente, string cantidadartciulos, string montototal, string idarticulo)
+        public CarritoDTO(int idcliente, int cantidadarticulos, decimal montototal, int idarticulo)
         {
             this.idcliente = idcliente;
-            this.cantidadartciulos = cantidadartciulos;
+            this.cantidadarticulos = cantidadarticulos;
             this.montototal = montototal;
             this.idarticulo = idarticulo;
-
         }
+        public int IdCliente { get { return this.idcliente; } }
+        public int Cantidadarticulos { get { return this.cantidadarticulos; } }
+        public decimal Montotal { get { return this.montototal; } }
+        public int Idarticulo { get { return this.idarticulo; } }
+
     }
 }

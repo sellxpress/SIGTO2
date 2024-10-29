@@ -15,12 +15,12 @@ namespace CapaLogica
         private string nombre;
         private string apellido;
         private string contra;
-        private string fechanac;
+        private DateTime fechanac;
         private string nrocelular;
         private string foto;
 
 
-        public Persona(string correo, string ci, string nombre, string apellido, string contra, string fechanac, string nrocelular, string foto = "0")
+        public Persona(string correo, string ci, string nombre, string apellido, string contra, DateTime fechanac, string nrocelular, string foto = "0")
         {
             this.correo = correo;
             this.ci = ci;
@@ -51,5 +51,6 @@ namespace CapaLogica
             return pDTO;
 
         }
-}
+
+    }
 }

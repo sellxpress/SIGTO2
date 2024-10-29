@@ -38,11 +38,18 @@ namespace CapaPresentacion
             this.btnMonitorearActividad = new System.Windows.Forms.Button();
             this.btngestionarUsuarios = new System.Windows.Forms.Button();
             this.pnlPie = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.pbUser = new System.Windows.Forms.PictureBox();
+            this.lblHora = new System.Windows.Forms.Label();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.pnlContenido.SuspendLayout();
+            this.pnlPie.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
@@ -112,6 +119,7 @@ namespace CapaPresentacion
             this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConfiguracion.UseVisualStyleBackColor = false;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
             // btnMonitorearActividad
             // 
@@ -154,11 +162,60 @@ namespace CapaPresentacion
             // pnlPie
             // 
             this.pnlPie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pnlPie.Controls.Add(this.pictureBox1);
+            this.pnlPie.Controls.Add(this.lblNombre);
+            this.pnlPie.Controls.Add(this.pbUser);
+            this.pnlPie.Controls.Add(this.lblHora);
             this.pnlPie.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlPie.Location = new System.Drawing.Point(0, 511);
             this.pnlPie.Name = "pnlPie";
             this.pnlPie.Size = new System.Drawing.Size(1084, 50);
             this.pnlPie.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.IconoReloj;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 80;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.lblNombre.Location = new System.Drawing.Point(41, 3);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNombre.Size = new System.Drawing.Size(118, 18);
+            this.lblNombre.TabIndex = 77;
+            this.lblNombre.Text = "Nombre Usuario";
+            // 
+            // pbUser
+            // 
+            this.pbUser.Image = global::CapaPresentacion.Properties.Resources.IconoUsuario;
+            this.pbUser.Location = new System.Drawing.Point(9, 3);
+            this.pbUser.Name = "pbUser";
+            this.pbUser.Size = new System.Drawing.Size(26, 18);
+            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUser.TabIndex = 79;
+            this.pbUser.TabStop = false;
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.lblHora.Location = new System.Drawing.Point(41, 27);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblHora.Size = new System.Drawing.Size(40, 18);
+            this.lblHora.TabIndex = 78;
+            this.lblHora.Text = "19:06";
+            this.lblHora.Click += new System.EventHandler(this.lblHora_Click);
             // 
             // pnlTitulo
             // 
@@ -171,7 +228,6 @@ namespace CapaPresentacion
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1084, 70);
             this.pnlTitulo.TabIndex = 7;
-            this.pnlTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTitulo_Paint);
             // 
             // lblTitulo
             // 
@@ -188,7 +244,7 @@ namespace CapaPresentacion
             // btnMinimizar
             // 
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.Minimize_Icon;
+            this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.IconoMinimizar;
             this.btnMinimizar.Location = new System.Drawing.Point(1023, 28);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(16, 16);
@@ -200,7 +256,7 @@ namespace CapaPresentacion
             // btnSalir
             // 
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.Close_Icon;
+            this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.IconoCerrar;
             this.btnSalir.Location = new System.Drawing.Point(1056, 28);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(16, 16);
@@ -222,6 +278,10 @@ namespace CapaPresentacion
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             this.pnlContenido.ResumeLayout(false);
+            this.pnlPie.ResumeLayout(false);
+            this.pnlPie.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
@@ -243,5 +303,9 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSalir;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.PictureBox pbUser;
+        private System.Windows.Forms.Label lblHora;
     }
 }

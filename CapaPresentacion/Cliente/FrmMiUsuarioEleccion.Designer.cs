@@ -37,8 +37,8 @@ namespace CapaPresentacion
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.pnlPie = new System.Windows.Forms.Panel();
-            this.btnCliente = new System.Windows.Forms.Button();
-            this.btnEmpresa = new System.Windows.Forms.Button();
+            this.btnDatos = new System.Windows.Forms.Button();
+            this.btnDireccion = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -62,7 +62,6 @@ namespace CapaPresentacion
             this.lblTitulo.Size = new System.Drawing.Size(283, 33);
             this.lblTitulo.TabIndex = 61;
             this.lblTitulo.Text = "Selecciona una opción";
-            this.lblTitulo.Click += new System.EventHandler(this.lblContraseña_Click);
             this.lblTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblTitulo_MouseMove);
             // 
             // pnlTitulo
@@ -82,7 +81,7 @@ namespace CapaPresentacion
             // btnMinimizar
             // 
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.Minimize_Icon;
+            this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.IconoMinimizar;
             this.btnMinimizar.Location = new System.Drawing.Point(611, 21);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(16, 16);
@@ -94,14 +93,14 @@ namespace CapaPresentacion
             // btnSalir
             // 
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.Close_Icon;
+            this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.IconoCerrar;
             this.btnSalir.Location = new System.Drawing.Point(643, 21);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(16, 16);
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.btnSalir.TabIndex = 64;
             this.btnSalir.TabStop = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // pnlPie
             // 
@@ -113,43 +112,43 @@ namespace CapaPresentacion
             this.pnlPie.TabIndex = 65;
             this.pnlPie.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPie_Paint);
             // 
-            // btnCliente
+            // btnDatos
             // 
-            this.btnCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCliente.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnCliente.ImageKey = "editarPerfil.png";
-            this.btnCliente.ImageList = this.IlMiUsuarioEleccion;
-            this.btnCliente.Location = new System.Drawing.Point(27, 70);
-            this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(293, 146);
-            this.btnCliente.TabIndex = 68;
-            this.btnCliente.Text = "Editar perfil";
-            this.btnCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCliente.UseVisualStyleBackColor = false;
-            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            this.btnDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnDatos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatos.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnDatos.ImageKey = "editarPerfil.png";
+            this.btnDatos.ImageList = this.IlMiUsuarioEleccion;
+            this.btnDatos.Location = new System.Drawing.Point(27, 70);
+            this.btnDatos.Name = "btnDatos";
+            this.btnDatos.Size = new System.Drawing.Size(293, 146);
+            this.btnDatos.TabIndex = 68;
+            this.btnDatos.Text = "Editar perfil";
+            this.btnDatos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDatos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDatos.UseVisualStyleBackColor = false;
+            this.btnDatos.Click += new System.EventHandler(this.btnDatos_Click);
             // 
-            // btnEmpresa
+            // btnDireccion
             // 
-            this.btnEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.btnEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpresa.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnEmpresa.ImageKey = "direccion.png";
-            this.btnEmpresa.ImageList = this.IlMiUsuarioEleccion;
-            this.btnEmpresa.Location = new System.Drawing.Point(354, 70);
-            this.btnEmpresa.Name = "btnEmpresa";
-            this.btnEmpresa.Size = new System.Drawing.Size(293, 146);
-            this.btnEmpresa.TabIndex = 67;
-            this.btnEmpresa.Text = "Editar dirección";
-            this.btnEmpresa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEmpresa.UseVisualStyleBackColor = false;
-            this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
+            this.btnDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btnDireccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDireccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDireccion.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnDireccion.ImageKey = "direccion.png";
+            this.btnDireccion.ImageList = this.IlMiUsuarioEleccion;
+            this.btnDireccion.Location = new System.Drawing.Point(354, 70);
+            this.btnDireccion.Name = "btnDireccion";
+            this.btnDireccion.Size = new System.Drawing.Size(293, 146);
+            this.btnDireccion.TabIndex = 67;
+            this.btnDireccion.Text = "Editar dirección";
+            this.btnDireccion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDireccion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDireccion.UseVisualStyleBackColor = false;
+            this.btnDireccion.Click += new System.EventHandler(this.btnDireccion_Click);
             // 
             // btnConfirmar
             // 
@@ -164,7 +163,7 @@ namespace CapaPresentacion
             this.btnConfirmar.TabIndex = 73;
             this.btnConfirmar.Text = "Volver";
             this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click_1);
             // 
             // FrmMiUsuarioEleccion
             // 
@@ -173,14 +172,14 @@ namespace CapaPresentacion
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.ClientSize = new System.Drawing.Size(676, 295);
             this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.btnCliente);
-            this.Controls.Add(this.btnEmpresa);
+            this.Controls.Add(this.btnDatos);
+            this.Controls.Add(this.btnDireccion);
             this.Controls.Add(this.pnlPie);
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMiUsuarioEleccion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro Eleccion";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FrmRegistroEleccion_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
@@ -197,8 +196,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSalir;
         private System.Windows.Forms.Panel pnlPie;
-        private System.Windows.Forms.Button btnCliente;
-        private System.Windows.Forms.Button btnEmpresa;
+        private System.Windows.Forms.Button btnDatos;
+        private System.Windows.Forms.Button btnDireccion;
         private System.Windows.Forms.Button btnConfirmar;
     }
 }

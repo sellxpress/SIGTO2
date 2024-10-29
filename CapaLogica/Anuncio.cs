@@ -4,21 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using CapaDatos;
 
 
-/*namespace CapaLogica
+namespace CapaLogica
 {
     class Anuncio
     {
-        private string idanuncio;
+        private int idanuncio;
         private string nombre;
-        private string fechainicio;
-        private string fechafin;
-        private string descuento;
+        private DateTime fechainicio;
+        private DateTime fechafin;
+        private int descuento;
         private string imagen;
         private string empresarut;
 
-        public Anuncio(string idanuncio, string nombre, string fechainicio, string fechafin, string descuento, string imagen, string empresarut)
+        public Anuncio(int idanuncio, string nombre, DateTime fechainicio, DateTime fechafin, int descuento, string imagen, string empresarut)
         {
             this.idanuncio = idanuncio;
             this.nombre = nombre;
@@ -50,4 +51,3 @@ using DTO;
         }
     }
 }
-*/

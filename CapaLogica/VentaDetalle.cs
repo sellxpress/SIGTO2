@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using CapaDatos;
 
-/*namespace CapaLogica
+namespace CapaLogica
 {
     public class VentaDetalle
     {
-        private string idventadetalle;
-        private string preciounitario;
-        private string nroarticulos;
-        private string idventa;
-        private string idarticulo;
+        private int idventadetalle;
+        private decimal preciounitario;
+        private int nroarticulos;
+        private int idventa;
+        private int idarticulo;
 
-        public VentaDetalle(string idventadetalle, string preciounitario, string nroarticulos, string idventa, string idarticulo)
+        public VentaDetalle(int idventadetalle, decimal preciounitario, int nroarticulos, int idventa, int idarticulo)
         {
             this.idventadetalle = idventadetalle;
             this.preciounitario = preciounitario;
@@ -28,15 +29,15 @@ using DTO;
         {
             VentaDetalleDTO vDto = MapearVentaDetalleDTO();
             Datos d = new Datos();
-            int filas = d.insertarVentaDetalle(vDto);
-            if (filas > 0)
-            {
-                //Se logro la consulta
-            }
-            else
-            {
-                //No se logro
-            }
+            /* int filas = d.insertarVentaDetalle(vDto);
+             if (filas > 0)
+             {
+                 //Se logro la consulta
+             }
+             else
+             {
+                 //No se logro
+             }*/
         }
         public VentaDetalleDTO MapearVentaDetalleDTO()
         {
@@ -46,4 +47,3 @@ using DTO;
         }
     }
 }
-*/

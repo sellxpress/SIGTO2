@@ -5,12 +5,14 @@ namespace CapaPresentacion
 {
     internal static class Principal
     {
+        public static FrmLogin principal;
         [STAThread]
         private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
+            principal = new FrmLogin();
+            Application.Run(principal);
         }
     }
 }

@@ -2,6 +2,8 @@
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Linq;
+using System.Drawing;
 using CapaLogica;
 
 namespace CapaPresentacion
@@ -16,67 +18,6 @@ namespace CapaPresentacion
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
-        #region "Validar Campos TextBoxs"
-
-        private bool ValidarCampos()
-        {
-            DateTime FechaNac;
-            bool ok = true;
-            if (txtNombre.Text == "")
-            {
-                ok = false;
-                ep.SetError(txtNombre, "Debe ingresar un nombre");
-            }
-            if (txtApellido.Text == "")
-            {
-                ok = false;
-                ep.SetError(txtApellido, "Debe ingresar un apellido");
-            }
-            if (txtCedula.Text == "")
-            {
-                ok = false;
-                ep.SetError(txtCedula, "Debe ingresar una cedula de identidad");
-            }
-            if (txtEmail.Text == "")
-            {
-                ok = false;
-                ep.SetError(txtEmail, "Debe ingresar un email");
-            }
-            if (txtNroTelefonico.Text == "")
-            {
-                ok = false;
-                ep.SetError(txtNroTelefonico, "Debe ingresar un nro telefonico valido");
-            }
-            if (txtFechaNac.Text == "" || !DateTime.TryParse(txtFechaNac.Text, out FechaNac))
-            {
-                ok = false;
-                ep.SetError(txtFechaNac, "Debe ingresar una fecha de nacimiento valida, el formato es DD-MM-YYYY");
-            }
-            if (txtContraseña.Text == "")
-            {
-                ok = false;
-                ep.SetError(txtContraseña, "Debe ingresar una contraseña");
-            }
-            return ok;
-        }
-
-        #endregion "Validar Campos TextBoxs"
-
-        #region "Eliminar Error Textboxs"
-
-        private void EliminarError()
-        {
-            ep.SetError(txtNombre, "");
-            ep.SetError(txtApellido, "");
-            ep.SetError(txtEmail, "");
-            ep.SetError(txtCedula, "");
-            ep.SetError(txtNroTelefonico, "");
-            ep.SetError(txtFechaNac, "");
-            ep.SetError(txtContraseña, "");
-        }
-
-        #endregion "Eliminar Error Textboxs"
-
         #region "Controlar la ventana"
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -86,68 +27,6 @@ namespace CapaPresentacion
         private static extern void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         #endregion "Controlar la ventana"
-
-
-        #region "PruebaRegistro"
-        private bool Registro()
-        {
-            bool ok = true;
-            if (txtNombre.Text == "" && txtApellido.Text == "" && txtEmail.Text == "" && txtContraseña.Text == "" && txtCedula.Text == "" && txtNroTelefonico.Text == "" && txtFechaNac.Text == "")
-            {
-                ok = false;
-                ValidarCampos();
-            }
-            else
-            {
-                Form formulario = new FrmLogin();
-                formulario.Show();
-                this.Hide();
-            }
-            return ok;
-        }
-        #endregion
-
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void LblEmail_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void LblContraseña_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void txtCedula_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-        }
-
-        private void txtFechaNac_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void txtNumeroTelefonico_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -167,14 +46,6 @@ namespace CapaPresentacion
             }
         }
 
-        private void txtFechaNac_Validating(object sender, CancelEventArgs e)
-        {
-        }
-
-        private void PnlTitulo_MouseMove(object sender, MouseEventArgs e)
-        {
-        }
-
         private void pnlTitulo_Paint(object sender, PaintEventArgs e)
         {
         }
@@ -190,32 +61,105 @@ namespace CapaPresentacion
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnSalir_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void btnRegistro_Click(object sender, EventArgs e)
         {
+            // 1. Validar campos vacíos
+            if (string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtCedula.Text) ||
+                string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtApellido.Text) ||
+                string.IsNullOrWhiteSpace(txtContraseña.Text) || string.IsNullOrWhiteSpace(txtFechaNac.Text) ||
+                string.IsNullOrWhiteSpace(txtNroTelefonico.Text))
+            {
+                lblError.Visible = true;
+                return;
+            }
+            else
+            {
+                lblError.Visible = false;
+            }
+
+            // 2. Validar formato del correo
+            if (!IsValidEmail(txtEmail.Text))
+            {
+                lblErrorEmail.Visible = true;
+                return;
+            }
+            else
+            {
+                lblErrorEmail.Visible = false;
+            }
+
+            // 3. Validar que la cédula tenga exactamente 8 dígitos y no contenga puntos ni guiones
+            if (txtCedula.Text.Length != 8 || !txtCedula.Text.All(char.IsDigit))
+            {
+                lblErrorCI.Visible = true;
+                return;
+            }
+            else
+            {
+                lblErrorCI.Visible = false;
+            }
+
+            // 4. Validar la fecha de nacimiento en formato yyyy-MM-dd
+            if (!DateTime.TryParseExact(txtFechaNac.Text, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out DateTime fechaNacimiento))
+            {
+                lblErrorFN.Visible = true;
+                return;
+            }
+            else
+            {
+                lblErrorFN.Visible = false;
+            }
+
+            // 5. Validar que el número de teléfono tenga exactamente 9 dígitos
+            if (txtNroTelefonico.Text.Length != 9 || !txtNroTelefonico.Text.All(char.IsDigit))
+            {
+                lblErrorNroTel.Visible = true;
+                return;
+            }
+            else
+            {
+                lblErrorNroTel.Visible = false;
+            }
+
+            // Si todas las validaciones son correctas, proceder con el registro
             string correo = txtEmail.Text;
             string ci = txtCedula.Text;
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
             string contra = txtContraseña.Text;
-            string fechanac = txtFechaNac.Text;
+            DateTime fechanac = fechaNacimiento;
             string nrocelular = txtNroTelefonico.Text;
-            Persona unaPersona = new Persona(correo, ci, nombre, apellido, contra, fechanac, nrocelular);
-            unaPersona.insertarPersona();
-            EliminarError();
-            ValidarCampos();
+            string personacorreo = txtEmail.Text;
+            long nrocompras = 0;
+            int idcliente = 0;
+
+            try
+            {
+                Persona unaPersona = new Persona(correo, ci, nombre, apellido, contra, fechanac, nrocelular);
+                unaPersona.insertarPersona();
+
+                Cliente unCliente = new Cliente(personacorreo, idcliente, nrocompras);
+                unCliente.insertarCliente();
+
+                Principal.principal.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private void lblTitulo_MouseMove(object sender, MouseEventArgs e)
@@ -224,12 +168,78 @@ namespace CapaPresentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void txtFechaNac_KeyPress(object sender, KeyPressEventArgs e)
+        private void FrmRegistroCliente_Load(object sender, EventArgs e)
         {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 44) || (e.KeyChar >= 58 && e.KeyChar <= 255) || (e.KeyChar >= 46 && e.KeyChar <= 47))
+            lblError.Visible = false;
+            lblErrorEmail.Visible = false;
+            lblErrorFN.Visible = false;
+            lblErrorCI.Visible = false;
+            lblErrorNroTel.Visible = false;
+
+            txtFechaNac.Text = "1981-09-28";  // Ejemplo fecha
+            txtFechaNac.ForeColor = Color.LightGray; // Cambia el texto a gris
+            txtCedula.Text = "12345678"; // Ejemplo ci
+            txtCedula.ForeColor = Color.LightGray; // Cambia el texto a gris
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Form formulario = new FrmRegistroEleccion();
+            formulario.Show();
+            this.Close();
+        }
+
+        private void txtCedula_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
                 e.Handled = true;
                 return;
+            }
+        }
+
+        private void txtNroTelefonico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtFechaNac_Enter(object sender, EventArgs e)
+        {
+            if (txtFechaNac.Text == "1981-09-28") // Ejemplo fecha
+            {
+                txtFechaNac.Text = "";
+                txtFechaNac.ForeColor = Color.Black; // Cambia el texto a negro
+            }
+        }
+
+        private void txtFechaNac_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtFechaNac.Text))
+            {
+                txtFechaNac.Text = "1981-09-28"; // Ejemplo fecha
+                txtFechaNac.ForeColor = Color.LightGray; // Cambia el texto a gris
+            }
+        }
+
+        private void txtCedula_Enter(object sender, EventArgs e)
+        {
+            if (txtCedula.Text == "12345678")
+            {
+                txtCedula.Text = "";
+                txtCedula.ForeColor = Color.Black; // Cambia el texto a negro
+            }
+        }
+
+        private void txtCedula_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCedula.Text))
+            {
+                txtCedula.Text = "12345678";
+                txtCedula.ForeColor = Color.LightGray; // Cambia el texto a gris 
             }
         }
     }

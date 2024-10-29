@@ -8,15 +8,15 @@ namespace CapaLogica
 {
     public  class AnuncioDTO
     {
-        private string idanuncio;
+        private int idanuncio;
         private string nombre;
-        private string fechainicio;
-        private string fechafin;
-        private string descuento;
+        private DateTime fechainicio;
+        private DateTime fechafin;
+        private int descuento;
         private string imagen;
         private string empresarut;
 
-        public AnuncioDTO(string idanuncio, string nombre, string fechainicio, string fechafin, string descuento, string imagen, string empresarut)
+        public AnuncioDTO(int idanuncio, string nombre, DateTime fechainicio, DateTime fechafin, int descuento, string imagen, string empresarut)
         {
             this.idanuncio = idanuncio;
             this.nombre = nombre;
@@ -26,5 +26,12 @@ namespace CapaLogica
             this.imagen = imagen;
             this.empresarut = empresarut;
         }
+        public int Idanuncio { get { return this.idanuncio; } }
+        public string Nombre { get { return this.nombre; } }
+        public DateTime Fechainicio { get { return this.fechainicio; } }
+        public DateTime Fechafin { get { return this.fechafin; } }
+        public int Descuento { get { return this.descuento; } }
+        public string Imagen { get { return this.imagen; } }
+        public string Empresarut { get { return this.empresarut; } }
     }
 }

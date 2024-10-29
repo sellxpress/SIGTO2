@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using CapaLogica;
 
 namespace CapaPresentacion
 {
@@ -33,62 +34,13 @@ namespace CapaPresentacion
 
         #endregion "Placeholder"
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void PnlTitulo_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void LblTitulo_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void FrmRegistroEmpresa_Load(object sender, EventArgs e)
         {
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnSalir_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formulario = new FrmMenuCliente();
-            formulario.Show();
-        }
-
-        private void txtRut_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void txtRut_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
-            {
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void FrmRegistroEmpresa_MouseMove(object sender, MouseEventArgs e)
-        {
         }
 
         private void pnlTitulo_MouseMove(object sender, MouseEventArgs e)
@@ -99,32 +51,7 @@ namespace CapaPresentacion
         {
         }
 
-        private void lblRedireccion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Form formulario = new FrmLogin();
-            formulario.Show();
-            this.Hide();
-        }
-
         private void pnlPie_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void btnEmpresa_Click(object sender, EventArgs e)
-        {
-            Form formulario = new FrmMiUsuarioDireccion();
-            formulario.Show();
-            this.Hide();
-        }
-
-        private void btnCliente_Click(object sender, EventArgs e)
-        {
-            Form formulario = new FrmMiUsuarioDatos();
-            formulario.Show();
-            this.Hide();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
         {
         }
 
@@ -139,7 +66,36 @@ namespace CapaPresentacion
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
+            Form formulario = new FrmMenuCliente();
+            formulario.Show();
+        }
+
+        private void btnDatos_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form formulario = new FrmMiUsuarioDatos();
+            formulario.Show();
+        }
+
+        private void btnDireccion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form formulario = new FrmMiUsuarioDireccion();
+            formulario.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form formulario = new FrmMenuCliente();
+            formulario.Show();
+
+        }
+
+        private void btnConfirmar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
             Form formulario = new FrmMenuCliente();
             formulario.Show();
         }

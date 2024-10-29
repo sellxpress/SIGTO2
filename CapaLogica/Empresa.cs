@@ -15,11 +15,11 @@ namespace CapaLogica
         private string nombre;
         private string correo;
         private string contra;
-        private string nroventas;
+        private long nroventas;
         private string logo;
         private string descripcion;
 
-        public Empresa(string rut, string nombre, string correo, string contra, string nroventas = "0", string logo = "0", string descripcion = "0")
+        public Empresa(string rut, string nombre, string correo, string contra, long nroventas, string logo = "", string descripcion = "")
         {
             this.rut = rut;
             this.nombre = nombre;
@@ -29,11 +29,28 @@ namespace CapaLogica
             this.logo = logo;
             this.descripcion = descripcion;
         }
+        public Empresa()
+            {
+            }
          public void insertarEmpresa()
         {
             EmpresaDTO eDto = MapearEmpresaDTO();
             Datos d = new Datos();
             int filas = d.insertarEmpresa(eDto);
+            if (filas > 0)
+            {
+                //Se logro la consulta
+            }
+            else
+            {
+                //No se logro
+            }
+        }
+        public void actualizarEmpresa()
+        {
+            EmpresaDTO eDto = MapearEmpresaDTO();
+            Datos d = new Datos();
+            int filas = d.actualizarEmpresa(eDto);
             if (filas > 0)
             {
                 //Se logro la consulta

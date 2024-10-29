@@ -11,15 +11,15 @@ namespace CapaLogica
 {
     public class Carrito
     {
-        private string idcliente;
-        private string cantidadartciulos;
-        private string montototal;
-        private string idarticulo;
+        private int idcliente;
+        private int cantidadarticulos;
+        private decimal montototal;
+        private int idarticulo;
 
-        public Carrito(string idcliente, string cantidadartciulos, string montototal, string idarticulo)
+        public Carrito(int idcliente, int cantidadarticulos, decimal montototal, int idarticulo)
         {
             this.idcliente = idcliente;
-            this.cantidadartciulos = cantidadartciulos;
+            this.cantidadarticulos = cantidadarticulos;
             this.montototal = montototal;
             this.idarticulo = idarticulo;
          
@@ -28,7 +28,7 @@ namespace CapaLogica
         {
             CarritoDTO cDto = MapearCarritoDTO();
             Datos d = new Datos();
-            /*  int filas = d.insertarCarrito(cDto);
+              int filas = d.InsertarCarrito(cDto);
                if (filas > 0)
               {
                   //Se logro la consulta
@@ -36,11 +36,11 @@ namespace CapaLogica
               else
               {
                   //No se logro
-              } */
+              } 
         }
         public CarritoDTO MapearCarritoDTO()
         {
-            CarritoDTO cDTO = new CarritoDTO(this.idcliente, this.cantidadartciulos,  this.montototal, this.idarticulo);
+            CarritoDTO cDTO = new CarritoDTO(this.idcliente, this.cantidadarticulos,  this.montototal, this.idarticulo);
             return cDTO;
 
         }

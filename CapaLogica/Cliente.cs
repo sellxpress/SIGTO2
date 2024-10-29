@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using CapaDatos;
 
 
-/*namespace CapaLogica
+namespace CapaLogica
 {
     public class Cliente
     {
         private string personacorreo;
-        private string idcliente;
-        private string nrocompras;
+        private int idcliente;
+        private long nrocompras;
 
-        public Cliente(string personacorreo, string idcliente, string nrocompras)
+        public Cliente(string personacorreo,  int idcliente, long nrocompras)
         {
             this.personacorreo = personacorreo;
             this.idcliente = idcliente;
@@ -42,4 +43,3 @@ using DTO;
         }
     }
 }
-*/

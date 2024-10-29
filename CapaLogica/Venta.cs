@@ -10,17 +10,17 @@ namespace CapaLogica
 {
     public class Venta
     {
-        private string idventa;
+        private int idventa;
         private string estado;
-        private string fechayhora;
-        private string importefinal;
-        private string importetotal;
-        private string descuento;
-        private string costoenvio;
-        private string idcliente;
-        private string idpickup;
+        private DateTime fechayhora;
+        private decimal importefinal;
+        private decimal importetotal;
+        private int descuento;
+        private decimal costoenvio;
+        private int idcliente;
+        private int idpickup;
 
-        public Venta(string idventa, string estado, string fechayhora, string importefinal, string importetotal, string descuento, string costoenvio, string idcliente, string idpickup)
+        public Venta(int idventa, string estado, DateTime fechayhora, decimal importefinal, decimal importetotal, int descuento, decimal costoenvio, int idcliente, int idpickup)
         {
             this.idventa = idventa;
             this.estado = estado;

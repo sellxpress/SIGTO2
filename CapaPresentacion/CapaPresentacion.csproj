@@ -46,65 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackOffice\FrmConfiguracion.cs">
+    <Compile Include="Cliente\FrmCarrtitoC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BackOffice\FrmConfiguracion.Designer.cs">
-      <DependentUpon>FrmConfiguracion.cs</DependentUpon>
+    <Compile Include="Cliente\FrmCarrtitoC.Designer.cs">
+      <DependentUpon>FrmCarrtitoC.cs</DependentUpon>
     </Compile>
-    <Compile Include="BackOffice\FrmConfiguracion2.cs">
+    <Compile Include="Cliente\FrmNavegar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BackOffice\FrmConfiguracion2.Designer.cs">
-      <DependentUpon>FrmConfiguracion2.cs</DependentUpon>
+    <Compile Include="Cliente\FrmNavegar.Designer.cs">
+      <DependentUpon>FrmNavegar.cs</DependentUpon>
     </Compile>
-    <Compile Include="BackOffice\FrmGestionUsuarios.cs">
+    <Compile Include="Cliente\FrmListaReseñas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BackOffice\FrmGestionUsuarios.Designer.cs">
-      <DependentUpon>FrmGestionUsuarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BackOffice\FrmGestionUsuarios2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BackOffice\FrmGestionUsuarios2.Designer.cs">
-      <DependentUpon>FrmGestionUsuarios2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BackOffice\FrmMonitorearActividad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BackOffice\FrmMonitorearActividad.Designer.cs">
-      <DependentUpon>FrmMonitorearActividad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BackOffice\FrmMonitorearActividad2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BackOffice\FrmMonitorearActividad2.Designer.cs">
-      <DependentUpon>FrmMonitorearActividad2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cliente\FrmCarrito.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cliente\FrmCarrito.Designer.cs">
-      <DependentUpon>FrmCarrito.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cliente\FrmCarrito2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cliente\FrmCarrito2.Designer.cs">
-      <DependentUpon>FrmCarrito2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cliente\FrmCompras.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cliente\FrmCompras.Designer.cs">
-      <DependentUpon>FrmCompras.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cliente\FrmCompras2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cliente\FrmCompras2.Designer.cs">
-      <DependentUpon>FrmCompras2.cs</DependentUpon>
+    <Compile Include="Cliente\FrmListaReseñas.Designer.cs">
+      <DependentUpon>FrmListaReseñas.cs</DependentUpon>
     </Compile>
     <Compile Include="Cliente\FrmMiUsuarioDireccion.cs">
       <SubType>Form</SubType>
@@ -118,17 +76,17 @@
     <Compile Include="Cliente\FrmMiUsuarioDatos.Designer.cs">
       <DependentUpon>FrmMiUsuarioDatos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cliente\FrmNavegar.cs">
+    <Compile Include="Cliente\FrmDetallesProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cliente\FrmNavegar.Designer.cs">
-      <DependentUpon>FrmNavegar.cs</DependentUpon>
+    <Compile Include="Cliente\FrmDetallesProducto.Designer.cs">
+      <DependentUpon>FrmDetallesProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cliente\FrmNavegar2.cs">
+    <Compile Include="Cliente\FrmReseñas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cliente\FrmNavegar2.Designer.cs">
-      <DependentUpon>FrmNavegar2.cs</DependentUpon>
+    <Compile Include="Cliente\FrmReseñas.Designer.cs">
+      <DependentUpon>FrmReseñas.cs</DependentUpon>
     </Compile>
     <Compile Include="Cliente\FrmRegistroCliente.cs">
       <SubType>Form</SubType>
@@ -142,34 +100,76 @@
     <Compile Include="Cliente\FrmMiUsuarioEleccion.Designer.cs">
       <DependentUpon>FrmMiUsuarioEleccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cliente\FrmReseñas.cs">
+    <Compile Include="Cliente\FrmCompras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cliente\FrmReseñas.Designer.cs">
-      <DependentUpon>FrmReseñas.cs</DependentUpon>
+    <Compile Include="Cliente\FrmCompras.Designer.cs">
+      <DependentUpon>FrmCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cliente\FrmReseñas2.cs">
+    <Compile Include="Empresa\FrmListaPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cliente\FrmReseñas2.Designer.cs">
-      <DependentUpon>FrmReseñas2.cs</DependentUpon>
+    <Compile Include="Empresa\FrmListaPedidos.Designer.cs">
+      <DependentUpon>FrmListaPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empresa1\FrmMiEmpresaDatos.cs">
+    <Compile Include="Empresa\FrmListaPromociones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empresa1\FrmMiEmpresaDatos.Designer.cs">
-      <DependentUpon>FrmMiEmpresaDatos.cs</DependentUpon>
+    <Compile Include="Empresa\FrmListaPromociones.Designer.cs">
+      <DependentUpon>FrmListaPromociones.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegistroEleccion.cs">
+    <Compile Include="Empresa\FrmPromociones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegistroEleccion.Designer.cs">
+    <Compile Include="Empresa\FrmPromociones.Designer.cs">
+      <DependentUpon>FrmPromociones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmVentas.Designer.cs">
+      <DependentUpon>FrmVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmListaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmListaProductos.Designer.cs">
+      <DependentUpon>FrmListaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmProductos.Designer.cs">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmMiEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmMiEmpresa.Designer.cs">
+      <DependentUpon>FrmMiEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Normales\FrmVistaPrevia2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Normales\FrmVistaPrevia2.Designer.cs">
+      <DependentUpon>FrmVistaPrevia2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Normales\FrmVistaPrevia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Normales\FrmVistaPrevia.Designer.cs">
+      <DependentUpon>FrmVistaPrevia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Normales\FrmRegistroEleccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Normales\FrmRegistroEleccion.Designer.cs">
       <DependentUpon>FrmRegistroEleccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empresa1\FrmRegistroEmpresa.cs">
+    <Compile Include="Empresa\FrmRegistroEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empresa1\FrmRegistroEmpresa.Designer.cs">
+    <Compile Include="Empresa\FrmRegistroEmpresa.Designer.cs">
       <DependentUpon>FrmRegistroEmpresa.cs</DependentUpon>
     </Compile>
     <Compile Include="Cliente\FrmMenuCliente.cs">
@@ -178,16 +178,16 @@
     <Compile Include="Cliente\FrmMenuCliente.Designer.cs">
       <DependentUpon>FrmMenuCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empresa1\FrmMenuEmpresa.cs">
+    <Compile Include="Empresa\FrmMenuEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empresa1\FrmMenuEmpresa.Designer.cs">
+    <Compile Include="Empresa\FrmMenuEmpresa.Designer.cs">
       <DependentUpon>FrmMenuEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLogin.cs">
+    <Compile Include="Normales\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLogin.Designer.cs">
+    <Compile Include="Normales\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="BackOffice\FrmMenuBackOffice.cs">
@@ -198,25 +198,64 @@
     </Compile>
     <Compile Include="Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Cliente\FrmCarrtitoC.resx">
+      <DependentUpon>FrmCarrtitoC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FrmNavegar.resx">
+      <DependentUpon>FrmNavegar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FrmListaReseñas.resx">
+      <DependentUpon>FrmListaReseñas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cliente\FrmMiUsuarioDireccion.resx">
       <DependentUpon>FrmMiUsuarioDireccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\FrmMiUsuarioDatos.resx">
       <DependentUpon>FrmMiUsuarioDatos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FrmDetallesProducto.resx">
+      <DependentUpon>FrmDetallesProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FrmReseñas.resx">
+      <DependentUpon>FrmReseñas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cliente\FrmRegistroCliente.resx">
       <DependentUpon>FrmRegistroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empresa1\FrmMiEmpresaDatos.resx">
-      <DependentUpon>FrmMiEmpresaDatos.cs</DependentUpon>
+    <EmbeddedResource Include="Cliente\FrmCompras.resx">
+      <DependentUpon>FrmCompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogin.resx">
+    <EmbeddedResource Include="Empresa\FrmListaPedidos.resx">
+      <DependentUpon>FrmListaPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\FrmListaPromociones.resx">
+      <DependentUpon>FrmListaPromociones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\FrmPromociones.resx">
+      <DependentUpon>FrmPromociones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\FrmVentas.resx">
+      <DependentUpon>FrmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\FrmListaProductos.resx">
+      <DependentUpon>FrmListaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\FrmProductos.resx">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\FrmMiEmpresa.resx">
+      <DependentUpon>FrmMiEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Normales\FrmVistaPrevia2.resx">
+      <DependentUpon>FrmVistaPrevia2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Normales\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\FrmMenuCliente.resx">
       <DependentUpon>FrmMenuCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empresa1\FrmMenuEmpresa.resx">
+    <EmbeddedResource Include="Empresa\FrmMenuEmpresa.resx">
       <DependentUpon>FrmMenuEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BackOffice\FrmMenuBackOffice.resx">
@@ -225,10 +264,13 @@
     <EmbeddedResource Include="Cliente\FrmMiUsuarioEleccion.resx">
       <DependentUpon>FrmMiUsuarioEleccion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegistroEleccion.resx">
+    <EmbeddedResource Include="Normales\FrmVistaPrevia.resx">
+      <DependentUpon>FrmVistaPrevia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Normales\FrmRegistroEleccion.resx">
       <DependentUpon>FrmRegistroEleccion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empresa1\FrmRegistroEmpresa.resx">
+    <EmbeddedResource Include="Empresa\FrmRegistroEmpresa.resx">
       <DependentUpon>FrmRegistroEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -281,6 +323,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LogoEmpresaSinFondo12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\micuenta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reloj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CuentaPersonal.png" />
+    <Content Include="Resources\default.png" />
+    <None Include="Resources\default1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

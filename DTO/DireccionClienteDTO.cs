@@ -9,14 +9,14 @@ namespace CapaLogica
 {
     public class DireccionClienteDTO
     {
-        private string idcliente;
+        private int idcliente;
         private string calle;
         private string numero;
         private string localidad;
         private string departamento;
         private string referencia;
 
-        public DireccionClienteDTO(string idcliente, string calle, string numero, string localidad, string departamento, string referencia)
+        public DireccionClienteDTO(int idcliente, string calle, string numero, string localidad, string departamento, string referencia)
         {
             this.idcliente = idcliente;
             this.calle = calle;
@@ -25,5 +25,12 @@ namespace CapaLogica
             this.departamento = departamento;
             this.referencia = referencia;
         }
+        public int Idcliente { get { return this.idcliente; } }
+        public string Calle { get { return this.calle; } }
+        public string Numero { get { return this.numero; } }
+        public string Localidad { get { return this.localidad; } }
+        public string Departamento { get { return this.departamento; } }
+        public string Referencia { get { return this.referencia; } }
+
     }
 }

@@ -563,7 +563,7 @@ namespace CapaPresentacion
             // btnMinimizar
             // 
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.Minimize_Icon;
+            this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.IconoMinimizar;
             this.btnMinimizar.Location = new System.Drawing.Point(894, 28);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(16, 16);
@@ -575,7 +575,7 @@ namespace CapaPresentacion
             // btnSalir
             // 
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.Close_Icon;
+            this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.IconoCerrar;
             this.btnSalir.Location = new System.Drawing.Point(927, 28);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(16, 16);

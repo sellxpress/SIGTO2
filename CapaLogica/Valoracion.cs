@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using CapaDatos;
 
-
-/*namespace CapaLogica
+namespace CapaLogica
 {
     public class Valoracion
     {
-        private string idvaloracion;
+        private int idvaloracion;
         private string calificacion;
         private string comentario;
-        private string idarticulo;
-        private string idcliente;
+        private int idarticulo;
+        private int idcliente;
    
-        public Valoracion(string idvaloracion, string calificacion, string comentario, string idarticulo, string idcliente)
+        public Valoracion(int idvaloracion, string calificacion, string comentario, int idarticulo, int idcliente)
         {
             this.idvaloracion = idvaloracion;
             this.calificacion = calificacion;
@@ -28,7 +28,7 @@ using DTO;
         {
             ValoracionDTO vDto = MapearValoracionDTO();
             Datos d = new Datos();
-            int filas = d.insertarValoracion(vDto);
+            /*int filas = d.insertarValoracion(vDto);
             if (filas > 0)
             {
                 //Se logro la consulta
@@ -36,7 +36,7 @@ using DTO;
             else
             {
                 //No se logro
-            }
+            }*/
         }
         public ValoracionDTO MapearValoracionDTO()
         {
@@ -46,4 +46,3 @@ using DTO;
         }
     }
 }
-*/

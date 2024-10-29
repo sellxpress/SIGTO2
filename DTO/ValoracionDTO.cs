@@ -8,13 +8,13 @@ namespace CapaLogica
 {
     public class ValoracionDTO
     {
-        private string idvaloracion;
+        private int idvaloracion;
         private string calificacion;
         private string comentario;
-        private string idarticulo;
-        private string idcliente;
+        private int idarticulo;
+        private int idcliente;
 
-        public ValoracionDTO(string idvaloracion, string calificacion, string comentario, string idarticulo, string idcliente)
+        public ValoracionDTO(int idvaloracion, string calificacion, string comentario, int idarticulo, int idcliente)
         {
             this.idvaloracion = idvaloracion;
             this.calificacion = calificacion;
@@ -22,5 +22,11 @@ namespace CapaLogica
             this.idarticulo = idarticulo;
             this.idcliente = idcliente;
         }
+        public int Idvaloracion { get { return this.idvaloracion; } }
+        public string Calificacion { get { return this.calificacion; } }
+        public string Comentario { get { return this.comentario; } }
+        public int Idarticulo { get { return this.idarticulo; } }
+        public int Idcliente { get { return this.idcliente; } }
+
     }
 }

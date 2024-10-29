@@ -63,9 +63,69 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Close_Icon {
+        internal static System.Drawing.Bitmap _default {
             get {
-                object obj = ResourceManager.GetObject("Close_Icon", resourceCulture);
+                object obj = ResourceManager.GetObject("default", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CuentaPersonal {
+            get {
+                object obj = ResourceManager.GetObject("CuentaPersonal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoCerrar {
+            get {
+                object obj = ResourceManager.GetObject("IconoCerrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoMiCuenta {
+            get {
+                object obj = ResourceManager.GetObject("IconoMiCuenta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoMinimizar {
+            get {
+                object obj = ResourceManager.GetObject("IconoMinimizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoReloj {
+            get {
+                object obj = ResourceManager.GetObject("IconoReloj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoUsuario {
+            get {
+                object obj = ResourceManager.GetObject("IconoUsuario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,16 +156,6 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap LogoEmpresaSinFondo12 {
             get {
                 object obj = ResourceManager.GetObject("LogoEmpresaSinFondo12", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Minimize_Icon {
-            get {
-                object obj = ResourceManager.GetObject("Minimize_Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

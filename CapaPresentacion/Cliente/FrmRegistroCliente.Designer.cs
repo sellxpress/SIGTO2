@@ -29,9 +29,6 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegistroCliente));
-            this.IlRegistroUsuario = new System.Windows.Forms.ImageList(this.components);
             this.lblCedula = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -46,7 +43,6 @@ namespace CapaPresentacion
             this.txtNroTelefonico = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.lblContraseña = new System.Windows.Forms.Label();
-            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
@@ -54,30 +50,27 @@ namespace CapaPresentacion
             this.pnlPie = new System.Windows.Forms.Panel();
             this.btnRegistro = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
+            this.lblError = new System.Windows.Forms.Label();
+            this.lblErrorEmail = new System.Windows.Forms.Label();
+            this.lblErrorCI = new System.Windows.Forms.Label();
+            this.lblErrorFN = new System.Windows.Forms.Label();
+            this.lblErrorNroTel = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // IlRegistroUsuario
-            // 
-            this.IlRegistroUsuario.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("IlRegistroUsuario.ImageStream")));
-            this.IlRegistroUsuario.TransparentColor = System.Drawing.Color.Transparent;
-            this.IlRegistroUsuario.Images.SetKeyName(0, "salir.png");
-            // 
             // lblCedula
             // 
             this.lblCedula.AutoSize = true;
             this.lblCedula.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblCedula.Location = new System.Drawing.Point(96, 274);
+            this.lblCedula.Location = new System.Drawing.Point(96, 295);
             this.lblCedula.Name = "lblCedula";
             this.lblCedula.Size = new System.Drawing.Size(153, 19);
             this.lblCedula.TabIndex = 30;
             this.lblCedula.Text = "Cedula de identidad";
-            this.lblCedula.Click += new System.EventHandler(this.LblContraseña_Click);
             // 
             // txtNombre
             // 
@@ -88,7 +81,6 @@ namespace CapaPresentacion
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(182, 21);
             this.txtNombre.TabIndex = 29;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblNombre
@@ -101,14 +93,13 @@ namespace CapaPresentacion
             this.lblNombre.Size = new System.Drawing.Size(68, 19);
             this.lblNombre.TabIndex = 28;
             this.lblNombre.Text = "Nombre";
-            this.lblNombre.Click += new System.EventHandler(this.LblEmail_Click);
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblEmail.Location = new System.Drawing.Point(96, 332);
+            this.lblEmail.Location = new System.Drawing.Point(96, 363);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(59, 19);
             this.lblEmail.TabIndex = 34;
@@ -118,7 +109,7 @@ namespace CapaPresentacion
             // 
             this.txtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.txtApellido.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(99, 232);
+            this.txtApellido.Location = new System.Drawing.Point(100, 249);
             this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(182, 21);
@@ -130,44 +121,42 @@ namespace CapaPresentacion
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblApellido.Location = new System.Drawing.Point(95, 210);
+            this.lblApellido.Location = new System.Drawing.Point(96, 227);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(69, 19);
             this.lblApellido.TabIndex = 32;
             this.lblApellido.Text = "Apellido";
-            this.lblApellido.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblNroTelefonico
             // 
             this.lblNroTelefonico.AutoSize = true;
             this.lblNroTelefonico.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNroTelefonico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblNroTelefonico.Location = new System.Drawing.Point(95, 391);
+            this.lblNroTelefonico.Location = new System.Drawing.Point(95, 431);
             this.lblNroTelefonico.Name = "lblNroTelefonico";
-            this.lblNroTelefonico.Size = new System.Drawing.Size(146, 19);
+            this.lblNroTelefonico.Size = new System.Drawing.Size(144, 19);
             this.lblNroTelefonico.TabIndex = 38;
-            this.lblNroTelefonico.Text = "Numero Telefonico";
+            this.lblNroTelefonico.Text = "Numero telefonico";
             // 
             // txtFechaNac
             // 
             this.txtFechaNac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.txtFechaNac.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaNac.Location = new System.Drawing.Point(100, 471);
+            this.txtFechaNac.Location = new System.Drawing.Point(99, 523);
             this.txtFechaNac.MaxLength = 10;
             this.txtFechaNac.Name = "txtFechaNac";
             this.txtFechaNac.Size = new System.Drawing.Size(182, 21);
             this.txtFechaNac.TabIndex = 41;
             this.txtFechaNac.Tag = "";
-            this.txtFechaNac.TextChanged += new System.EventHandler(this.txtFechaNac_TextChanged);
-            this.txtFechaNac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFechaNac_KeyPress);
-            this.txtFechaNac.Validating += new System.ComponentModel.CancelEventHandler(this.txtFechaNac_Validating);
+            this.txtFechaNac.Enter += new System.EventHandler(this.txtFechaNac_Enter);
+            this.txtFechaNac.Leave += new System.EventHandler(this.txtFechaNac_Leave);
             // 
             // lblFechaNac
             // 
             this.lblFechaNac.AutoSize = true;
             this.lblFechaNac.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaNac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblFechaNac.Location = new System.Drawing.Point(96, 449);
+            this.lblFechaNac.Location = new System.Drawing.Point(95, 501);
             this.lblFechaNac.Name = "lblFechaNac";
             this.lblFechaNac.Size = new System.Drawing.Size(159, 19);
             this.lblFechaNac.TabIndex = 40;
@@ -177,20 +166,21 @@ namespace CapaPresentacion
             // 
             this.txtCedula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.txtCedula.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(99, 296);
+            this.txtCedula.Location = new System.Drawing.Point(99, 317);
             this.txtCedula.MaxLength = 8;
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(182, 21);
             this.txtCedula.TabIndex = 44;
-            this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
-            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
+            this.txtCedula.Enter += new System.EventHandler(this.txtCedula_Enter);
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress_1);
+            this.txtCedula.Leave += new System.EventHandler(this.txtCedula_Leave);
             // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtEmail.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(99, 354);
+            this.txtEmail.Location = new System.Drawing.Point(99, 385);
             this.txtEmail.MaxLength = 60;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(182, 21);
@@ -200,18 +190,18 @@ namespace CapaPresentacion
             // 
             this.txtNroTelefonico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.txtNroTelefonico.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNroTelefonico.Location = new System.Drawing.Point(99, 413);
+            this.txtNroTelefonico.Location = new System.Drawing.Point(99, 453);
             this.txtNroTelefonico.MaxLength = 9;
             this.txtNroTelefonico.Name = "txtNroTelefonico";
             this.txtNroTelefonico.Size = new System.Drawing.Size(182, 21);
             this.txtNroTelefonico.TabIndex = 46;
-            this.txtNroTelefonico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroTelefonico_KeyPress);
+            this.txtNroTelefonico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroTelefonico_KeyPress);
             // 
             // txtContraseña
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.txtContraseña.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(99, 535);
+            this.txtContraseña.Location = new System.Drawing.Point(99, 587);
             this.txtContraseña.MaxLength = 40;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(182, 21);
@@ -223,17 +213,11 @@ namespace CapaPresentacion
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblContraseña.Location = new System.Drawing.Point(96, 513);
+            this.lblContraseña.Location = new System.Drawing.Point(96, 565);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(93, 19);
             this.lblContraseña.TabIndex = 47;
             this.lblContraseña.Text = "Contraseña";
-            // 
-            // ep
-            // 
-            this.ep.BlinkRate = 300;
-            this.ep.ContainerControl = this;
-            this.ep.Icon = ((System.Drawing.Icon)(resources.GetObject("ep.Icon")));
             // 
             // pnlTitulo
             // 
@@ -256,15 +240,15 @@ namespace CapaPresentacion
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.lblTitulo.Location = new System.Drawing.Point(12, 19);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(184, 19);
+            this.lblTitulo.Size = new System.Drawing.Size(136, 19);
             this.lblTitulo.TabIndex = 69;
-            this.lblTitulo.Text = "Registrar nuevo usuario";
+            this.lblTitulo.Text = "Registrar usuario";
             this.lblTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblTitulo_MouseMove);
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.Minimize_Icon;
+            this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.IconoMinimizar;
             this.btnMinimizar.Location = new System.Drawing.Point(302, 22);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(16, 16);
@@ -276,20 +260,20 @@ namespace CapaPresentacion
             // btnSalir
             // 
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.Close_Icon;
+            this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.IconoCerrar;
             this.btnSalir.Location = new System.Drawing.Point(333, 22);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(16, 16);
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.btnSalir.TabIndex = 64;
             this.btnSalir.TabStop = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // pnlPie
             // 
             this.pnlPie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.pnlPie.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlPie.Location = new System.Drawing.Point(0, 637);
+            this.pnlPie.Location = new System.Drawing.Point(0, 684);
             this.pnlPie.Name = "pnlPie";
             this.pnlPie.Size = new System.Drawing.Size(361, 17);
             this.pnlPie.TabIndex = 66;
@@ -301,7 +285,7 @@ namespace CapaPresentacion
             this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistro.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnRegistro.Location = new System.Drawing.Point(88, 575);
+            this.btnRegistro.Location = new System.Drawing.Point(87, 624);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Size = new System.Drawing.Size(204, 40);
             this.btnRegistro.TabIndex = 68;
@@ -318,12 +302,72 @@ namespace CapaPresentacion
             this.pbLogo.TabIndex = 67;
             this.pbLogo.TabStop = false;
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(5)))), ((int)(((byte)(4)))));
+            this.lblError.Location = new System.Drawing.Point(97, 667);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(175, 14);
+            this.lblError.TabIndex = 73;
+            this.lblError.Text = "Debe rellenar todos los campos";
+            // 
+            // lblErrorEmail
+            // 
+            this.lblErrorEmail.AutoSize = true;
+            this.lblErrorEmail.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(5)))), ((int)(((byte)(4)))));
+            this.lblErrorEmail.Location = new System.Drawing.Point(96, 409);
+            this.lblErrorEmail.Name = "lblErrorEmail";
+            this.lblErrorEmail.Size = new System.Drawing.Size(80, 14);
+            this.lblErrorEmail.TabIndex = 74;
+            this.lblErrorEmail.Text = "Email invalido";
+            // 
+            // lblErrorCI
+            // 
+            this.lblErrorCI.AutoSize = true;
+            this.lblErrorCI.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(5)))), ((int)(((byte)(4)))));
+            this.lblErrorCI.Location = new System.Drawing.Point(96, 341);
+            this.lblErrorCI.Name = "lblErrorCI";
+            this.lblErrorCI.Size = new System.Drawing.Size(60, 14);
+            this.lblErrorCI.TabIndex = 75;
+            this.lblErrorCI.Text = "CI invalida";
+            // 
+            // lblErrorFN
+            // 
+            this.lblErrorFN.AutoSize = true;
+            this.lblErrorFN.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorFN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(5)))), ((int)(((byte)(4)))));
+            this.lblErrorFN.Location = new System.Drawing.Point(96, 547);
+            this.lblErrorFN.Name = "lblErrorFN";
+            this.lblErrorFN.Size = new System.Drawing.Size(129, 14);
+            this.lblErrorFN.TabIndex = 76;
+            this.lblErrorFN.Text = " Formato YYYY-MM-DD";
+            // 
+            // lblErrorNroTel
+            // 
+            this.lblErrorNroTel.AutoSize = true;
+            this.lblErrorNroTel.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorNroTel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(5)))), ((int)(((byte)(4)))));
+            this.lblErrorNroTel.Location = new System.Drawing.Point(97, 477);
+            this.lblErrorNroTel.Name = "lblErrorNroTel";
+            this.lblErrorNroTel.Size = new System.Drawing.Size(150, 14);
+            this.lblErrorNroTel.TabIndex = 77;
+            this.lblErrorNroTel.Text = "Numero telefonico invalido";
+            // 
             // FrmRegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(361, 654);
+            this.ClientSize = new System.Drawing.Size(361, 701);
+            this.Controls.Add(this.lblErrorNroTel);
+            this.Controls.Add(this.lblErrorFN);
+            this.Controls.Add(this.lblErrorCI);
+            this.Controls.Add(this.lblErrorEmail);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnRegistro);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.pnlPie);
@@ -347,7 +391,7 @@ namespace CapaPresentacion
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Usuario";
-            ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
+            this.Load += new System.EventHandler(this.FrmRegistroCliente_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
@@ -359,7 +403,6 @@ namespace CapaPresentacion
         }
 
         #endregion
-        private System.Windows.Forms.ImageList IlRegistroUsuario;
         private System.Windows.Forms.Label lblCedula;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
@@ -374,7 +417,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.TextBox txtNroTelefonico;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Label lblContraseña;
-        private System.Windows.Forms.ErrorProvider ep;
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSalir;
@@ -382,5 +424,10 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnRegistro;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblErrorEmail;
+        private System.Windows.Forms.Label lblErrorCI;
+        private System.Windows.Forms.Label lblErrorFN;
+        private System.Windows.Forms.Label lblErrorNroTel;
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaLogica
+namespace DTO
 {
    public class PersonaDTO
     {
@@ -13,11 +13,11 @@ namespace CapaLogica
         private string nombre;
         private string apellido;
         private string contra;
-        private string fechanac;
+        private DateTime fechanac;
         private string nrocelular;
         private string foto;
 
-        public PersonaDTO(string correo, string ci, string nombre, string apellido, string contra, string fechanac, string nrocelular, string foto)
+        public PersonaDTO(string correo, string ci, string nombre, string apellido, string contra, DateTime fechanac, string nrocelular, string foto)
         {
             this.correo = correo;
             this.ci = ci;
@@ -33,7 +33,7 @@ namespace CapaLogica
         public string Nombre { get { return this.nombre; } }
         public string Apellido { get { return this.apellido; } }
         public string Contra { get { return this.contra; } }
-        public string Fechanac { get { return this.fechanac; } }
+        public DateTime Fechanac { get { return this.fechanac; } }
         public string Nrocelular { get { return this.nrocelular; } }
         public string Foto { get { return this.foto; } }
 

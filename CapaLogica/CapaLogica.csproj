@@ -45,10 +45,10 @@
     <Compile Include="Anuncio.cs" />
     <Compile Include="Articulo.cs" />
     <Compile Include="Carrito.cs" />
-    <Compile Include="Item.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="DireccionCliente.cs" />
     <Compile Include="Empresa.cs" />
+    <Compile Include="Logica.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Pickup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

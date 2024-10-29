@@ -40,11 +40,20 @@ namespace CapaPresentacion
             this.btnCarrito = new System.Windows.Forms.Button();
             this.btnNavegar = new System.Windows.Forms.Button();
             this.pnlPie = new System.Windows.Forms.Panel();
+            this.pbReloj = new System.Windows.Forms.PictureBox();
+            this.pbUser = new System.Windows.Forms.PictureBox();
+            this.lblHora = new System.Windows.Forms.Label();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblTitulo1 = new System.Windows.Forms.Label();
             this.pnlContenido.SuspendLayout();
+            this.pnlPie.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReloj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
@@ -64,8 +73,9 @@ namespace CapaPresentacion
             this.pnlContenido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.pnlContenido.Location = new System.Drawing.Point(0, 70);
             this.pnlContenido.Name = "pnlContenido";
-            this.pnlContenido.Size = new System.Drawing.Size(1084, 441);
+            this.pnlContenido.Size = new System.Drawing.Size(1084, 405);
             this.pnlContenido.TabIndex = 6;
+            this.pnlContenido.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContenido_Paint);
             // 
             // btnCerrarSesion
             // 
@@ -76,7 +86,7 @@ namespace CapaPresentacion
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnCerrarSesion.ImageKey = "cerrarsesion.png";
             this.btnCerrarSesion.ImageList = this.ilPrincipalCliente;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(746, 246);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(746, 228);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(250, 135);
             this.btnCerrarSesion.TabIndex = 7;
@@ -112,7 +122,7 @@ namespace CapaPresentacion
             this.btnMiUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnMiUsuario.ImageKey = "micuenta.png";
             this.btnMiUsuario.ImageList = this.ilPrincipalCliente;
-            this.btnMiUsuario.Location = new System.Drawing.Point(381, 246);
+            this.btnMiUsuario.Location = new System.Drawing.Point(381, 228);
             this.btnMiUsuario.Name = "btnMiUsuario";
             this.btnMiUsuario.Size = new System.Drawing.Size(250, 135);
             this.btnMiUsuario.TabIndex = 5;
@@ -120,7 +130,7 @@ namespace CapaPresentacion
             this.btnMiUsuario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMiUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMiUsuario.UseVisualStyleBackColor = false;
-            this.btnMiUsuario.Click += new System.EventHandler(this.BtnConfiguracion_Click);
+            this.btnMiUsuario.Click += new System.EventHandler(this.btnMiUsuario_Click);
             // 
             // btnReseñas
             // 
@@ -131,7 +141,7 @@ namespace CapaPresentacion
             this.btnReseñas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnReseñas.ImageKey = "resenas.png";
             this.btnReseñas.ImageList = this.ilPrincipalCliente;
-            this.btnReseñas.Location = new System.Drawing.Point(42, 246);
+            this.btnReseñas.Location = new System.Drawing.Point(42, 228);
             this.btnReseñas.Name = "btnReseñas";
             this.btnReseñas.Size = new System.Drawing.Size(250, 135);
             this.btnReseñas.TabIndex = 3;
@@ -139,6 +149,7 @@ namespace CapaPresentacion
             this.btnReseñas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReseñas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReseñas.UseVisualStyleBackColor = false;
+            this.btnReseñas.Click += new System.EventHandler(this.btnReseñas_Click);
             // 
             // btnCompras
             // 
@@ -149,7 +160,7 @@ namespace CapaPresentacion
             this.btnCompras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnCompras.ImageKey = "compras.png";
             this.btnCompras.ImageList = this.ilPrincipalCliente;
-            this.btnCompras.Location = new System.Drawing.Point(746, 36);
+            this.btnCompras.Location = new System.Drawing.Point(746, 44);
             this.btnCompras.Name = "btnCompras";
             this.btnCompras.Size = new System.Drawing.Size(250, 135);
             this.btnCompras.TabIndex = 2;
@@ -157,6 +168,7 @@ namespace CapaPresentacion
             this.btnCompras.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCompras.UseVisualStyleBackColor = false;
+            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
             // 
             // btnCarrito
             // 
@@ -167,7 +179,7 @@ namespace CapaPresentacion
             this.btnCarrito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnCarrito.ImageKey = "carro.png";
             this.btnCarrito.ImageList = this.ilPrincipalCliente;
-            this.btnCarrito.Location = new System.Drawing.Point(381, 36);
+            this.btnCarrito.Location = new System.Drawing.Point(381, 44);
             this.btnCarrito.Name = "btnCarrito";
             this.btnCarrito.Size = new System.Drawing.Size(250, 135);
             this.btnCarrito.TabIndex = 1;
@@ -175,7 +187,7 @@ namespace CapaPresentacion
             this.btnCarrito.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCarrito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCarrito.UseVisualStyleBackColor = false;
-            this.btnCarrito.Click += new System.EventHandler(this.button1_Click);
+            this.btnCarrito.Click += new System.EventHandler(this.btnCarrito_Click);
             // 
             // btnNavegar
             // 
@@ -186,7 +198,7 @@ namespace CapaPresentacion
             this.btnNavegar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnNavegar.ImageKey = "comprar3.png";
             this.btnNavegar.ImageList = this.ilPrincipalCliente;
-            this.btnNavegar.Location = new System.Drawing.Point(42, 36);
+            this.btnNavegar.Location = new System.Drawing.Point(42, 44);
             this.btnNavegar.Name = "btnNavegar";
             this.btnNavegar.Size = new System.Drawing.Size(250, 135);
             this.btnNavegar.TabIndex = 0;
@@ -199,16 +211,53 @@ namespace CapaPresentacion
             // pnlPie
             // 
             this.pnlPie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.pnlPie.Controls.Add(this.lblNombre);
+            this.pnlPie.Controls.Add(this.pbReloj);
+            this.pnlPie.Controls.Add(this.pbUser);
+            this.pnlPie.Controls.Add(this.lblHora);
             this.pnlPie.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlPie.Location = new System.Drawing.Point(0, 511);
+            this.pnlPie.Location = new System.Drawing.Point(0, 475);
             this.pnlPie.Name = "pnlPie";
             this.pnlPie.Size = new System.Drawing.Size(1084, 50);
             this.pnlPie.TabIndex = 5;
+            // 
+            // pbReloj
+            // 
+            this.pbReloj.Image = global::CapaPresentacion.Properties.Resources.IconoReloj;
+            this.pbReloj.Location = new System.Drawing.Point(3, 27);
+            this.pbReloj.Name = "pbReloj";
+            this.pbReloj.Size = new System.Drawing.Size(26, 18);
+            this.pbReloj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbReloj.TabIndex = 72;
+            this.pbReloj.TabStop = false;
+            // 
+            // pbUser
+            // 
+            this.pbUser.Image = global::CapaPresentacion.Properties.Resources.IconoUsuario;
+            this.pbUser.Location = new System.Drawing.Point(3, 3);
+            this.pbUser.Name = "pbUser";
+            this.pbUser.Size = new System.Drawing.Size(26, 18);
+            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUser.TabIndex = 71;
+            this.pbUser.TabStop = false;
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.lblHora.Location = new System.Drawing.Point(35, 27);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblHora.Size = new System.Drawing.Size(43, 19);
+            this.lblHora.TabIndex = 70;
+            this.lblHora.Text = "19:06";
             // 
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.pnlTitulo.Controls.Add(this.lblTitulo);
+            this.pnlTitulo.Controls.Add(this.lblTitulo1);
             this.pnlTitulo.Controls.Add(this.btnMinimizar);
             this.pnlTitulo.Controls.Add(this.btnSalir);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -216,24 +265,23 @@ namespace CapaPresentacion
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1084, 70);
             this.pnlTitulo.TabIndex = 4;
-            this.pnlTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTitulo_Paint);
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.lblTitulo.Location = new System.Drawing.Point(414, 22);
+            this.lblTitulo.Location = new System.Drawing.Point(428, 25);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTitulo.Size = new System.Drawing.Size(206, 35);
+            this.lblTitulo.Size = new System.Drawing.Size(79, 42);
             this.lblTitulo.TabIndex = 62;
-            this.lblTitulo.Text = "Menu Principal";
+            this.lblTitulo.Text = "Sell";
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.Minimize_Icon;
+            this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.IconoMinimizar;
             this.btnMinimizar.Location = new System.Drawing.Point(1023, 32);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(16, 16);
@@ -245,7 +293,7 @@ namespace CapaPresentacion
             // btnSalir
             // 
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.Close_Icon;
+            this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.IconoCerrar;
             this.btnSalir.Location = new System.Drawing.Point(1056, 32);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(16, 16);
@@ -254,11 +302,41 @@ namespace CapaPresentacion
             this.btnSalir.TabStop = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.lblNombre.Location = new System.Drawing.Point(35, 3);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNombre.Size = new System.Drawing.Size(128, 19);
+            this.lblNombre.TabIndex = 74;
+            this.lblNombre.Text = "Nombre Usuario";
+            // 
+            // lblTitulo1
+            // 
+            this.lblTitulo1.AutoSize = true;
+            this.lblTitulo1.Font = new System.Drawing.Font("Bahnschrift", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
+            this.lblTitulo1.Location = new System.Drawing.Point(504, 25);
+            this.lblTitulo1.Name = "lblTitulo1";
+            this.lblTitulo1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblTitulo1.Size = new System.Drawing.Size(127, 42);
+            this.lblTitulo1.TabIndex = 69;
+            this.lblTitulo1.Text = "Xpress";
+            // 
             // FrmMenuCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 561);
+            this.ClientSize = new System.Drawing.Size(1084, 525);
             this.Controls.Add(this.pnlContenido);
             this.Controls.Add(this.pnlPie);
             this.Controls.Add(this.pnlTitulo);
@@ -267,6 +345,10 @@ namespace CapaPresentacion
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             this.pnlContenido.ResumeLayout(false);
+            this.pnlPie.ResumeLayout(false);
+            this.pnlPie.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReloj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
@@ -290,5 +372,11 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSalir;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.PictureBox pbUser;
+        private System.Windows.Forms.PictureBox pbReloj;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblTitulo1;
     }
 }

@@ -10,11 +10,13 @@ namespace CapaLogica
     public class AdministradorDTO
     {
         private string personacorreo;
-        private string idadministrador;
-        public AdministradorDTO(string personacorreo, string idadministrador)
+        private int idadministrador;
+        public AdministradorDTO(string personacorreo, int idadministrador)
         {
             this.personacorreo = personacorreo;
             this.idadministrador = idadministrador;
         }
+        public string PersonaCorreo { get { return this.personacorreo; } }
+        public int Idadministrador { get { return this.idadministrador; } }
     }
 }

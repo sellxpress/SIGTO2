@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaLogica
+namespace DTO
 {
     public class EmpresaDTO
     {
@@ -12,11 +12,11 @@ namespace CapaLogica
         private string nombre;
         private string correo;
         private string contra;
-        private string nroventas;
+        private long nroventas;
         private string logo;
         private string descripcion;
 
-        public EmpresaDTO(string rut, string nombre, string correo,string contra,string nroventas,string logo,string descripcion)
+        public EmpresaDTO(string rut, string nombre, string correo,string contra, long nroventas,string logo,string descripcion)
         {
             this.rut = rut;
             this.nombre = nombre;
@@ -32,7 +32,7 @@ namespace CapaLogica
         public string Nombre { get { return this.nombre; } }
         public string Correo { get { return this.correo; } }
         public string Contra { get { return this.contra; } }
-        public string Nroventas { get { return this.nroventas; } }
+        public long Nroventas { get { return this.nroventas; } }
         public string Logo { get { return this.logo; } }
         public string Descripcion { get { return this.descripcion; } }
 

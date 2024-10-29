@@ -9,14 +9,17 @@ namespace CapaLogica
     public class ClienteDTO
     {
         private string personacorreo;
-        private string idcliente;
-        private string nrocompras;
+        private int idcliente;
+        private long nrocompras;
 
-        public ClienteDTO(string personacorreo, string idcliente, string nrocompras)
+        public ClienteDTO(string personacorreo, int idcliente, long nrocompras)
         {
             this.personacorreo = personacorreo;
             this.idcliente = idcliente;
             this.nrocompras = nrocompras;
         }
+        public string PersonaCorreo { get { return this.personacorreo; } }
+        public int IdCliente { get { return this.idcliente; } }
+        public long NroCompras { get { return this.nrocompras; } }
     }
 }

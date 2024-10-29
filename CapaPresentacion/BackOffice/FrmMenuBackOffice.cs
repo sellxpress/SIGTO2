@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using CapaLogica;
 
 namespace CapaPresentacion
 {
@@ -8,13 +9,18 @@ namespace CapaPresentacion
         public FrmMenuBackOffice()
         {
             InitializeComponent();
+            lblHora.Text = DateTime.Now.ToString("HH:mm");
+            string correo = Principal.principal.Correo;
+            Logica logica = new Logica();
+            string tipoUsuario = "Cliente";
+            var info = logica.ObtenerInformacionUsuario(correo, tipoUsuario);
+            lblNombre.Text = $"{info.Nombre} {info.Apellido}";
         }
 
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
-            Form formulario = new FrmLogin();
-            formulario.Show();
-            this.Hide();
+            Principal.principal.Show();
+            this.Close();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -27,16 +33,22 @@ namespace CapaPresentacion
             Application.Exit();
         }
 
-        private void pnlTitulo_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
         private void btngestionarUsuarios_Click(object sender, EventArgs e)
         {
 
         }
 
         private void btnMonitorearActividad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHora_Click(object sender, EventArgs e)
         {
 
         }

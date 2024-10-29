@@ -10,13 +10,6 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void BtnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formulario = new FrmLogin();
-            formulario.Show();
-        }
-
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -24,23 +17,13 @@ namespace CapaPresentacion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Form formulario = new FrmMiUsuarioEleccion();
             formulario.Show();
         }
 
         private void pnlTitulo_Paint(object sender, PaintEventArgs e)
         {
-        }
-
-        private void btngestionarUsuarios_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMonitorearActividad_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void lblTitulo_Click(object sender, EventArgs e)
@@ -57,7 +40,7 @@ namespace CapaPresentacion
         {
             Form formulario = new FrmMiUsuarioEleccion();
             formulario.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void txtNroTelefonico_TextChanged(object sender, EventArgs e)

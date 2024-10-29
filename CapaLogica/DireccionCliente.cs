@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaDatos;
 
 
-/*namespace CapaLogica
+namespace CapaLogica
 {
     public class DireccionCliente
     {
-        private string idcliente;
+        private int idcliente;
         private string calle;
         private string numero;
         private string localidad;
         private string departamento;
         private string referencia;
 
-        public DireccionCliente(string idcliente, string calle, string numero, string localidad, string departamento, string referencia)
+        public DireccionCliente(int idcliente, string calle, string numero, string localidad, string departamento, string referencia)
         {
             this.idcliente = idcliente;
             this.calle = calle;
@@ -29,7 +30,7 @@ using System.Threading.Tasks;
         {
             DireccionClienteDTO dDto = MapearDireccionClienteDTO();
             Datos d = new Datos();
-            int filas = d.insertarDireccionCliente(dDto);
+           /* int filas = d.insertarDireccionCliente(dDto);
             if (filas > 0)
             {
                 //Se logro la consulta
@@ -37,7 +38,7 @@ using System.Threading.Tasks;
             else
             {
                 //No se logro
-            }
+            }*/
         }
         public DireccionClienteDTO MapearDireccionClienteDTO()
         {
@@ -46,4 +47,3 @@ using System.Threading.Tasks;
         }
     }
 }
-*/
