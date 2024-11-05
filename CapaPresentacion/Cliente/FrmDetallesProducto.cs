@@ -8,10 +8,16 @@ namespace CapaPresentacion
     public partial class FrmDetallesProducto : Form
     {
         private ArticuloDTO articulo;
+        int? idcliente;
         public FrmDetallesProducto(ArticuloDTO articulo)
         {
             InitializeComponent();
-            this.articulo = articulo; 
+            this.articulo = articulo;
+            string correo = Principal.principal.Correo;
+            Logica logica = new Logica();
+            string tipoUsuario = "Cliente";
+            var info = logica.ObtenerInformacionUsuario(correo, tipoUsuario);
+            idcliente = info.IdCliente;
             CargarDatos();
 
         }
@@ -33,7 +39,7 @@ namespace CapaPresentacion
                 }
             }
             txtDescripcion.Text = articulo.Descripcion;
-    }
+        }
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -42,8 +48,8 @@ namespace CapaPresentacion
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form formulario = new FrmMenuEmpresa();
-            formulario.Show();
+            FrmNavegar SellXpress = new FrmNavegar();
+            SellXpress.Show();
         }
 
         private void pnlTitulo_Paint(object sender, PaintEventArgs e)
@@ -66,14 +72,46 @@ namespace CapaPresentacion
             txtRutaImagen.Enter += (s, args) => { this.ActiveControl = null; };
 
         }
-        private void btnVolver_Click(object sender, EventArgs e)
+
+        private void btnEditar_Click(object sender, EventArgs e)
         {
             this.Close();
             FrmNavegar form = new FrmNavegar();
             form.Show();
         }
 
+        private void btnCarrito_Click(object sender, EventArgs e)
+        {
+            if (idcliente.HasValue)
+            {
+                // Mostrar el formulario para ingresar la cantidad
+                FrmCantidadProducto formCantidad = new FrmCantidadProducto();
+                formCantidad.ShowDialog();
+
+                if (formCantidad.Confirmar)
+                {
+                    int cantidad = formCantidad.Cantidad;
+
+                    // Verificar que la cantidad solicitada no supere el stock disponible
+                    if (cantidad <= articulo.Stock)
+                    {
+                        decimal montoTotal = cantidad * articulo.Precio;
+
+                        // Llamar al método para insertar o actualizar el carrito
+                        Carrito carrito = new Carrito();
+                        carrito.InsertarOActualizarCarrito(idcliente.Value, cantidad, montoTotal, articulo.Idarticulo);
+
+                        // Mensaje de confirmación
+                        MessageBox.Show($"{cantidad} artículo(s) agregado(s) al carrito. Monto total: {montoTotal:C}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"La cantidad solicitada excede el stock disponible. Stock actual: {articulo.Stock}");
+                    }
+                }
             }
         }
+    }
+}
    
     

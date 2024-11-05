@@ -7,27 +7,31 @@ using DTO;
 
 namespace CapaPresentacion
 {
+   
     public partial class FrmNavegar : Form
     {
+        int? idcliente;
+        private bool buscando = false;
         public FrmNavegar()
         {
             InitializeComponent();
-           
+
         }
         private void CargarArticulos()
         {
-             string textoBusqueda = txtBuscar.Text.Trim();
-             Logica logica = new Logica();
-             List<ArticuloDTO> articulos = logica.ObtenerTodosLosArticulos(textoBusqueda);
-             dgvProducto.DataSource = articulos;
-             ConfigurarDataGridView(dgvProducto);
-    }
+            string textoBusqueda = txtBuscar.Text.Trim();
+            Logica logica = new Logica();
+            string correo = Principal.principal.Correo;
+            string tipoUsuario = "Cliente";
+            var info = logica.ObtenerInformacionUsuario(correo, tipoUsuario);
+            idcliente = info.IdCliente;
+            List<ArticuloDTO> articulos = logica.ObtenerTodosLosArticulos(textoBusqueda);
+            dgvProducto.DataSource = articulos;
+            ConfigurarDataGridView(dgvProducto);
+        }
         private void ConfigurarDataGridView(DataGridView dgv)
         {
             #region Apariencia DGV
-            // Cambiar el nombre de la primera columna
-            dgvProducto.Columns[0].HeaderText = "ID ";
-
             // Establecer la fuente del DataGridView
             dgv.DefaultCellStyle.Font = new Font("Trebuchet MS", 12);
 
@@ -77,6 +81,7 @@ namespace CapaPresentacion
 
             // Opción adicional para asegurar que columnas específicas se expandan, por ejemplo, para "Categoria":
             dgvProducto.Columns["Categoria"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv.RowHeadersVisible = false;
             #endregion
         }
 
@@ -90,29 +95,57 @@ namespace CapaPresentacion
             this.Close();
             Form formulario = new FrmMenuCliente();
             formulario.Show();
-
         }
 
         private void pnlTitulo_Paint(object sender, PaintEventArgs e)
         {
         }
-
-
-        private void lblTitulo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            CargarArticulos();
+            if (buscando && txtBuscar.Text != "Buscar por nombre...")
+            {
+                CargarArticulos();
+            }
         }
 
         private void FrmNavegar_Load(object sender, EventArgs e)
         {
             CargarArticulos();
+            txtBuscar.Text = "Buscar por nombre...";
+            txtBuscar.ForeColor = Color.DarkGray;
+            txtBuscar.Enter += txtBuscar_Enter;
+            txtBuscar.Leave += txtBuscar_Leave;
+        }
+        private void dgvProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblTitulo1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCarrito_Click(object sender, EventArgs e)
+        {
+            if (dgvProducto.SelectedRows.Count > 0)
+            {
+                ArticuloDTO articuloSeleccionado = (ArticuloDTO)dgvProducto.SelectedRows[0].DataBoundItem;
+                FrmCantidadProducto formCantidad = new FrmCantidadProducto();
+                formCantidad.ShowDialog();
+                if (formCantidad.Confirmar)
+                {
+                    int cantidad = formCantidad.Cantidad; 
+                    decimal montoTotal = cantidad * articuloSeleccionado.Precio;
+                    Carrito carrito = new Carrito();
+                    carrito.InsertarOActualizarCarrito(idcliente.Value, cantidad, montoTotal, articuloSeleccionado.Idarticulo);
+                    MessageBox.Show($"{cantidad} artículo(s) agregado(s) al carrito. Monto total: {montoTotal:C}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un artículo para agregar al carrito.");
+            }
         }
 
         private void btnDetalles_Click(object sender, EventArgs e)
@@ -125,9 +158,25 @@ namespace CapaPresentacion
                 FrmDetallesProducto form = new FrmDetallesProducto(articuloSeleccionado);
                 form.Show();
             }
-            else
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Buscar por nombre...")
             {
-                MessageBox.Show("Por favor, seleccione un artículo para ver");
+                txtBuscar.Text = "";
+                txtBuscar.ForeColor = Color.Black;
+            }
+            buscando = true;
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                txtBuscar.Text = "Buscar por nombre...";
+                txtBuscar.ForeColor = Color.DarkGray;
+                buscando = false;
             }
         }
     }

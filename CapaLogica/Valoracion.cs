@@ -28,7 +28,7 @@ namespace CapaLogica
         {
             ValoracionDTO vDto = MapearValoracionDTO();
             Datos d = new Datos();
-            /*int filas = d.insertarValoracion(vDto);
+            int filas = d.insertarValoracion(vDto);
             if (filas > 0)
             {
                 //Se logro la consulta
@@ -36,7 +36,21 @@ namespace CapaLogica
             else
             {
                 //No se logro
-            }*/
+            }
+        }
+        public void actualizarValoracion()
+        {
+            ValoracionDTO vDto = MapearValoracionDTO();
+            Datos d = new Datos();
+            int filas = d.actualizarValoracion(vDto, idvaloracion);
+            if (filas > 0)
+            {
+                //Se logro la consulta
+            }
+            else
+            {
+
+            }
         }
         public ValoracionDTO MapearValoracionDTO()
         {

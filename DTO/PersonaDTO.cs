@@ -16,6 +16,7 @@ namespace DTO
         private DateTime fechanac;
         private string nrocelular;
         private string foto;
+        private int idcliente;
 
         public PersonaDTO(string correo, string ci, string nombre, string apellido, string contra, DateTime fechanac, string nrocelular, string foto)
         {
@@ -28,6 +29,18 @@ namespace DTO
             this.nrocelular = nrocelular;
             this.foto = foto;
         }
+            public PersonaDTO(string correo, string ci, string nombre, string apellido, DateTime fechanac, string nrocelular, string foto, int idcliente)
+            {
+                this.correo = correo;
+                this.ci = ci;
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.fechanac = fechanac;
+                this.nrocelular = nrocelular;
+                this.foto = foto;
+                this.idcliente = idcliente;
+            }
+
         public string Correo { get { return this.correo; } }
         public string Ci { get { return this.ci; } }
         public string Nombre { get { return this.nombre; } }
@@ -36,6 +49,6 @@ namespace DTO
         public DateTime Fechanac { get { return this.fechanac; } }
         public string Nrocelular { get { return this.nrocelular; } }
         public string Foto { get { return this.foto; } }
-
+        public int Idcliente { get { return this.idcliente; } }
     }
 }

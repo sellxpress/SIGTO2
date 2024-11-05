@@ -10,7 +10,6 @@ namespace CapaPresentacion
         private ArticuloDTO articulo;
         private string empresarut;
 
-        // Constructor para editar un artículo
         public FrmProductos(ArticuloDTO articulo)
         {
             InitializeComponent();
@@ -43,19 +42,15 @@ namespace CapaPresentacion
         {
             txtID.Text = articulo.Idarticulo.ToString();
             txtNombre.Text = articulo.Nombre;
-            // Cargar la categoría seleccionada
             if (lbCategoria.Items.Contains(articulo.Categoria))
             {
-                lbCategoria.SelectedItem = articulo.Categoria;  // Asumiendo que articulo.Categoria es un string que coincide con los elementos del ListBox
+                lbCategoria.SelectedItem = articulo.Categoria; 
             }
-
             txtPrecio.Text = articulo.Precio.ToString();
             txtCantidad.Text = articulo.Stock.ToString();
-
-            // Cargar el estado seleccionado
             if (lbEstado.Items.Contains(articulo.Estado))
             {
-                lbEstado.SelectedItem = articulo.Estado;  // Asumiendo que articulo.Estado es un string que coincide con los elementos del ListBox
+                lbEstado.SelectedItem = articulo.Estado; 
             }
             if (!string.IsNullOrEmpty(articulo.Imagen))
             {
@@ -65,7 +60,6 @@ namespace CapaPresentacion
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al cargar la imagen: " + ex.Message);
                 }
             }
 
@@ -87,25 +81,9 @@ namespace CapaPresentacion
         {
         }
 
-
-        private void lblTitulo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void lblRUT_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmProductos_Load(object sender, EventArgs e)
         {
+            lblError.Visible = false;
             txtID.Enter += (s, args) => { this.ActiveControl = null; };
         }
 
@@ -125,43 +103,38 @@ namespace CapaPresentacion
         {
 
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // Validar campos vacíos
             if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtPrecio.Text) ||
                 string.IsNullOrWhiteSpace(txtCantidad.Text) || lbCategoria.SelectedItem == null ||
-                lbEstado.SelectedItem == null || string.IsNullOrWhiteSpace(txtDescripcion.Text))
+                lbEstado.SelectedItem == null || string.IsNullOrWhiteSpace(txtRutaImagen.Text)) 
             {
-                MessageBox.Show("Debe completar todos los campos antes de continuar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblError.Visible = true;
                 return;
             }
+              else
+            {
+                lblError.Visible = false;
+            }
 
-            // Validar que el precio sea un número decimal válido
             if (!decimal.TryParse(txtPrecio.Text, out decimal precio) || precio <= 0)
             {
-                MessageBox.Show("El precio debe ser un número mayor a 0.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El precio debe ser un número mayor a 0", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-
             // Validar que la cantidad sea un número entero válido
             if (!int.TryParse(txtCantidad.Text, out int cantidad) || cantidad < 0)
             {
-                MessageBox.Show("La cantidad debe ser un número entero y mayor a 0.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("La cantidad debe ser un número entero", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-
-            // Obtener los valores de los campos
             string nombreArticulo = txtNombre.Text;
             string categoria = lbCategoria.SelectedItem.ToString();
             string estado = lbEstado.SelectedItem.ToString();
-            string descripcion = txtDescripcion.Text;
+            string descripcion = string.IsNullOrWhiteSpace(txtDescripcion.Text) ? null : txtDescripcion.Text; 
             string imagen = txtRutaImagen.Text;
             int idarticulo = int.TryParse(txtID.Text, out int parsedId) ? parsedId : 0;
-
-            // Crear un nuevo objeto Articulo
             Articulo nuevoArticulo = new Articulo(idarticulo, nombreArticulo, categoria, precio, cantidad, estado, imagen, descripcion, empresarut);
-
             if (idarticulo == 0)
             {
                 // Insertar nuevo artículo
@@ -172,18 +145,14 @@ namespace CapaPresentacion
                 // Actualizar artículo existente
                 nuevoArticulo.actualizarArticulo();
             }
-
-            // Redirigir a la lista de productos después del registro exitoso
             this.Close();
             FrmListaProductos form = new FrmListaProductos();
             form.Show();
         }
-
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Este campo solo permite numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
@@ -193,11 +162,11 @@ namespace CapaPresentacion
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Este campo solo permite numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
         }
+
         private void btnImagen_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -208,19 +177,11 @@ namespace CapaPresentacion
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Cargar la imagen en el PictureBox
                     string imagePath = openFileDialog.FileName;
                     pbImagen.Image = Image.FromFile(imagePath);
-
-                    // Guardar la ruta de la imagen para insertar en la base de datos
-                    txtRutaImagen.Text = imagePath; // Asegúrate de tener un TextBox para almacenar la ruta
+                    txtRutaImagen.Text = imagePath;
                 }
             }
-        }
-
-        private void pbImagen_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

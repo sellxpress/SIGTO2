@@ -9,7 +9,7 @@ using CapaDatos;
 
 namespace CapaLogica
 {
-    class Anuncio
+    public class Anuncio
     {
         private int idanuncio;
         private string nombre;
@@ -29,6 +29,10 @@ namespace CapaLogica
             this.imagen = imagen;
             this.empresarut = empresarut;
         }
+        public Anuncio()
+        {
+
+        }
         public void insertarAnuncio()
         {
             AnuncioDTO aDto = MapearAnuncioDTO();
@@ -36,13 +40,28 @@ namespace CapaLogica
             int filas = d.insertarAnuncio(aDto);
             if (filas > 0)
             {
-                //Se logro la consulta
+
             }
             else
             {
-                //No se logro
+
             }
         }
+        public void actualizarAnuncio()
+        {
+            AnuncioDTO aDto = MapearAnuncioDTO();
+            Datos d = new Datos();
+            int filas = d.actualizarAnuncio(aDto,idanuncio);
+            if (filas > 0)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
         public AnuncioDTO MapearAnuncioDTO()
         {
             AnuncioDTO aDTO = new AnuncioDTO(this.idanuncio,this.nombre,this.fechainicio,this.fechafin,this.descuento,this.imagen,this.empresarut);

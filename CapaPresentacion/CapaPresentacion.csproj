@@ -12,6 +12,22 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +48,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>33815545005C171FDB456C295AC56017E583C7DB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CapaPresentacion_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,11 +74,77 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackOffice\FrmListaEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmListaEmpresas.Designer.cs">
+      <DependentUpon>FrmListaEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\FrmListaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmListaUsuarios.Designer.cs">
+      <DependentUpon>FrmListaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\FrmListaProductosBo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmListaProductosBo.Designer.cs">
+      <DependentUpon>FrmListaProductosBo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\FrmEmpresaDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmEmpresaDetalles.Designer.cs">
+      <DependentUpon>FrmEmpresaDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\FrmMiUsuarioDatosBO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmMiUsuarioDatosBO.Designer.cs">
+      <DependentUpon>FrmMiUsuarioDatosBO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\FrmPersonaDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmPersonaDetalles.Designer.cs">
+      <DependentUpon>FrmPersonaDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\FrmProductosBO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmProductosBO.Designer.cs">
+      <DependentUpon>FrmProductosBO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackOffice\FrmEleccionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackOffice\FrmEleccionUsuarios.Designer.cs">
+      <DependentUpon>FrmEleccionUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cliente\FrmCarrtitoC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cliente\FrmCarrtitoC.Designer.cs">
       <DependentUpon>FrmCarrtitoC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmCantidadProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmCantidadProducto.Designer.cs">
+      <DependentUpon>FrmCantidadProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmFinalizarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmFinalizarCompra.Designer.cs">
+      <DependentUpon>FrmFinalizarCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmCompras.Designer.cs">
+      <DependentUpon>FrmCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="Cliente\FrmNavegar.cs">
       <SubType>Form</SubType>
@@ -100,11 +194,11 @@
     <Compile Include="Cliente\FrmMiUsuarioEleccion.Designer.cs">
       <DependentUpon>FrmMiUsuarioEleccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cliente\FrmCompras.cs">
+    <Compile Include="Empresa\FrmGestionarEstado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cliente\FrmCompras.Designer.cs">
-      <DependentUpon>FrmCompras.cs</DependentUpon>
+    <Compile Include="Empresa\FrmGestionarEstado.Designer.cs">
+      <DependentUpon>FrmGestionarEstado.cs</DependentUpon>
     </Compile>
     <Compile Include="Empresa\FrmListaPedidos.cs">
       <SubType>Form</SubType>
@@ -118,17 +212,17 @@
     <Compile Include="Empresa\FrmListaPromociones.Designer.cs">
       <DependentUpon>FrmListaPromociones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empresa\FrmPromociones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empresa\FrmPromociones.Designer.cs">
-      <DependentUpon>FrmPromociones.cs</DependentUpon>
-    </Compile>
     <Compile Include="Empresa\FrmVentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Empresa\FrmVentas.Designer.cs">
       <DependentUpon>FrmVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\FrmPromociones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresa\FrmPromociones.Designer.cs">
+      <DependentUpon>FrmPromociones.cs</DependentUpon>
     </Compile>
     <Compile Include="Empresa\FrmListaProductos.cs">
       <SubType>Form</SubType>
@@ -148,6 +242,7 @@
     <Compile Include="Empresa\FrmMiEmpresa.Designer.cs">
       <DependentUpon>FrmMiEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Microsoft\VisualBasic\Interaction.cs" />
     <Compile Include="Normales\FrmVistaPrevia2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,8 +293,41 @@
     </Compile>
     <Compile Include="Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BackOffice\FrmListaEmpresas.resx">
+      <DependentUpon>FrmListaEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackOffice\FrmListaUsuarios.resx">
+      <DependentUpon>FrmListaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackOffice\FrmListaProductosBo.resx">
+      <DependentUpon>FrmListaProductosBo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackOffice\FrmEmpresaDetalles.resx">
+      <DependentUpon>FrmEmpresaDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackOffice\FrmMiUsuarioDatosBO.resx">
+      <DependentUpon>FrmMiUsuarioDatosBO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackOffice\FrmPersonaDetalles.resx">
+      <DependentUpon>FrmPersonaDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackOffice\FrmProductosBO.resx">
+      <DependentUpon>FrmProductosBO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackOffice\FrmEleccionUsuarios.resx">
+      <DependentUpon>FrmEleccionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cliente\FrmCarrtitoC.resx">
       <DependentUpon>FrmCarrtitoC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FrmCantidadProducto.resx">
+      <DependentUpon>FrmCantidadProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FrmFinalizarCompra.resx">
+      <DependentUpon>FrmFinalizarCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FrmCompras.resx">
+      <DependentUpon>FrmCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\FrmNavegar.resx">
       <DependentUpon>FrmNavegar.cs</DependentUpon>
@@ -222,8 +350,8 @@
     <EmbeddedResource Include="Cliente\FrmRegistroCliente.resx">
       <DependentUpon>FrmRegistroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cliente\FrmCompras.resx">
-      <DependentUpon>FrmCompras.cs</DependentUpon>
+    <EmbeddedResource Include="Empresa\FrmGestionarEstado.resx">
+      <DependentUpon>FrmGestionarEstado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empresa\FrmListaPedidos.resx">
       <DependentUpon>FrmListaPedidos.cs</DependentUpon>
@@ -231,11 +359,11 @@
     <EmbeddedResource Include="Empresa\FrmListaPromociones.resx">
       <DependentUpon>FrmListaPromociones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empresa\FrmPromociones.resx">
-      <DependentUpon>FrmPromociones.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Empresa\FrmVentas.resx">
       <DependentUpon>FrmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresa\FrmPromociones.resx">
+      <DependentUpon>FrmPromociones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empresa\FrmListaProductos.resx">
       <DependentUpon>FrmListaProductos.cs</DependentUpon>
@@ -283,6 +411,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="CapaPresentacion_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -334,9 +466,22 @@
     <None Include="Resources\reloj.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\SinImagen.png" />
     <None Include="Resources\CuentaPersonal.png" />
     <Content Include="Resources\default.png" />
     <None Include="Resources\default1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

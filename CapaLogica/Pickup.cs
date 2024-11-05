@@ -24,20 +24,7 @@ namespace CapaLogica
             this.localidad = localidad;
             this.departamento = departamento;
         }
-        public void insertarPickup()
-        {
-            PickupDTO pDto = MapearPickupDTO();
-            Datos d = new Datos();
-           /* int filas = d.insertarPickup(pDto);
-            if (filas > 0)
-            {
-                //Se logro la consulta
-            }
-            else
-            {
-                //No se logro
-            }*/
-        }
+    
         public PickupDTO MapearPickupDTO()
         {
             PickupDTO pDTO = new PickupDTO( this.idpickup, this.calle, this.numero, this.localidad, this.departamento);

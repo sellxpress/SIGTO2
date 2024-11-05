@@ -7,16 +7,16 @@ namespace CapaPresentacion
 {
     public partial class FrmMenuEmpresa : Form
     {
-        
+        string hora;
         public FrmMenuEmpresa()
         {
             InitializeComponent();
-            lblHora.Text = DateTime.Now.ToString("HH:mm");
+            hora = DateTime.Now.ToString("HH:mm");
             string correo = Principal.principal.Correo;
             Logica logica = new Logica();
             string tipoUsuario = "Empresa";
             var info = logica.ObtenerInformacionUsuario(correo, tipoUsuario);
-            lblNombre.Text = $"{info.NombreEmpresa}";
+            lblInfo.Text = $"{info.NombreEmpresa} | "+hora;
         }
 
         private void FrmPrincipalEmpresa_Load(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace CapaPresentacion
 
         private void BtnProductos_Click(object sender, EventArgs e)
         {
-            Form formulario = new FrmListaProductos();
+            FrmListaProductos formulario = new FrmListaProductos();
             formulario.Show();
             this.Close();
         }
@@ -42,12 +42,16 @@ namespace CapaPresentacion
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-
+            FrmVentas formulario = new FrmVentas();
+            formulario.Show();
+            this.Close();
         }
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {
-
+            FrmListaPedidos formulario = new FrmListaPedidos();
+            formulario.Show();
+            this.Close();
         }
 
         private void btnCs_Click(object sender, EventArgs e)
@@ -65,7 +69,9 @@ namespace CapaPresentacion
 
         private void btnPromociones_Click(object sender, EventArgs e)
         {
-
+            FrmListaPromociones form = new FrmListaPromociones();
+            form.Show();
+            this.Close();
         }
 
         private void lblHora_Click(object sender, EventArgs e)
@@ -75,7 +81,7 @@ namespace CapaPresentacion
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            lblHora.Text = DateTime.Now.ToString("HH:mm");
+           hora = DateTime.Now.ToString("HH:mm");
         }
 
         private void pbUser_Click(object sender, EventArgs e)
@@ -94,6 +100,11 @@ namespace CapaPresentacion
         }
 
         private void pnlTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

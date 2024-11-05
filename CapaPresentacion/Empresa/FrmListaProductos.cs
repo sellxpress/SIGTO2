@@ -9,6 +9,7 @@ namespace CapaPresentacion
 {
     public partial class FrmListaProductos : Form
     {
+        private bool buscando = false;
         public FrmListaProductos()
         {
             InitializeComponent();
@@ -68,6 +69,7 @@ namespace CapaPresentacion
 
             // Opción adicional para asegurar que columnas específicas se expandan, por ejemplo, para "Categoria":
             dgvProducto.Columns["Categoria"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv.RowHeadersVisible = false;
             #endregion
         }
         private void CargarArticulos()
@@ -78,7 +80,7 @@ namespace CapaPresentacion
             dgvProducto.DataSource = articulos;
             ConfigurarDataGridView(dgvProducto);
             // Actualizar el Label con la cantidad de artículos
-            lblCantidadProductos.Text = $" {articulos.Count}";
+            lblProductos.Text = $"Productos totales:  {articulos.Count}";
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -109,25 +111,21 @@ namespace CapaPresentacion
         private void FrmProductos_Load(object sender, EventArgs e)
         {
             CargarArticulos();
+            txtBuscar.Text = "Buscar por nombre...";
+            txtBuscar.ForeColor = Color.DarkGray;
+            txtBuscar.Enter += txtBuscar_Enter;
+            txtBuscar.Leave += txtBuscar_Leave;
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dgvProducto.SelectedRows.Count > 0)
             {
-                // Obtener el artículo seleccionado
                 ArticuloDTO articuloSeleccionado = (ArticuloDTO)dgvProducto.SelectedRows[0].DataBoundItem;
-
-                // Abre el formulario en modo "Editar"
                 this.Close();
                 FrmProductos form = new FrmProductos(articuloSeleccionado);
                 form.Show();
             }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione un artículo para editar.");
-            }
         }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -148,7 +146,10 @@ namespace CapaPresentacion
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            CargarArticulos();
+            if (buscando && txtBuscar.Text != "Buscar por nombre...")
+            {
+                CargarArticulos();
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -156,26 +157,43 @@ namespace CapaPresentacion
             if (dgvProducto.SelectedRows.Count > 0)  // Verifica si hay filas seleccionadas
             {
                 int idArticulo = Convert.ToInt32(dgvProducto.SelectedRows[0].Cells["IdArticulo"].Value); 
-
                 DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar este artículo?", "Confirmar Eliminación", MessageBoxButtons.YesNo);
                 if (resultado == DialogResult.Yes)
                 {
                     Logica logica = new Logica();
                     bool exito = logica.EliminarArticulo(idArticulo);
-
                     if (exito)
                     {
                         CargarArticulos();
                     }
                     else
                     {
-                        MessageBox.Show("Error al eliminar el artículo.");
                     }
                 }
             }
             else
             {
                 MessageBox.Show("Por favor, selecciona un artículo para eliminar.");
+            }
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Buscar por nombre...")
+            {
+                txtBuscar.Text = "";
+                txtBuscar.ForeColor = Color.Black;
+            }
+            buscando = true;
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                txtBuscar.Text = "Buscar por nombre...";
+                txtBuscar.ForeColor = Color.DarkGray;
+                buscando = false;
             }
         }
     }

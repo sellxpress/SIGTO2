@@ -40,9 +40,9 @@ namespace CapaPresentacion
             this.btnInicio = new System.Windows.Forms.Button();
             this.lblRegistro = new System.Windows.Forms.LinkLabel();
             this.pnlPie = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblError = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
@@ -54,8 +54,8 @@ namespace CapaPresentacion
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblEmail.Location = new System.Drawing.Point(86, 192);
+            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblEmail.Location = new System.Drawing.Point(85, 167);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(59, 19);
             this.lblEmail.TabIndex = 1;
@@ -66,7 +66,8 @@ namespace CapaPresentacion
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtEmail.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(85, 215);
+            this.txtEmail.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtEmail.Location = new System.Drawing.Point(84, 190);
             this.txtEmail.MaxLength = 60;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(182, 22);
@@ -76,7 +77,8 @@ namespace CapaPresentacion
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.txtContraseña.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(85, 289);
+            this.txtContraseña.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtContraseña.Location = new System.Drawing.Point(84, 264);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(182, 22);
             this.txtContraseña.TabIndex = 5;
@@ -86,8 +88,8 @@ namespace CapaPresentacion
             // 
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblContraseña.Location = new System.Drawing.Point(86, 266);
+            this.lblContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblContraseña.Location = new System.Drawing.Point(85, 241);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(93, 19);
             this.lblContraseña.TabIndex = 4;
@@ -147,9 +149,9 @@ namespace CapaPresentacion
             this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInicio.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInicio.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicio.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnInicio.Location = new System.Drawing.Point(75, 351);
+            this.btnInicio.Location = new System.Drawing.Point(74, 325);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(204, 40);
             this.btnInicio.TabIndex = 51;
@@ -161,14 +163,14 @@ namespace CapaPresentacion
             // 
             this.lblRegistro.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.lblRegistro.AutoSize = true;
-            this.lblRegistro.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistro.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistro.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
-            this.lblRegistro.Location = new System.Drawing.Point(104, 394);
+            this.lblRegistro.Location = new System.Drawing.Point(70, 5);
             this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(136, 18);
+            this.lblRegistro.Size = new System.Drawing.Size(94, 19);
             this.lblRegistro.TabIndex = 68;
             this.lblRegistro.TabStop = true;
-            this.lblRegistro.Text = "Quiero registrarme";
+            this.lblRegistro.Text = "Registrarse";
             this.lblRegistro.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
             this.lblRegistro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblRegistro_LinkClicked);
             // 
@@ -176,18 +178,36 @@ namespace CapaPresentacion
             // 
             this.pnlPie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.pnlPie.Controls.Add(this.linkLabel1);
+            this.pnlPie.Controls.Add(this.lblRegistro);
             this.pnlPie.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlPie.Location = new System.Drawing.Point(0, 425);
+            this.pnlPie.Location = new System.Drawing.Point(0, 382);
             this.pnlPie.Name = "pnlPie";
-            this.pnlPie.Size = new System.Drawing.Size(344, 34);
+            this.pnlPie.Size = new System.Drawing.Size(344, 31);
             this.pnlPie.TabIndex = 69;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.linkLabel1.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.linkLabel1.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.linkLabel1.Location = new System.Drawing.Point(221, 6);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(57, 18);
+            this.linkLabel1.TabIndex = 72;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Vistazo";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // lblError
             // 
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(5)))), ((int)(((byte)(4)))));
-            this.lblError.Location = new System.Drawing.Point(86, 314);
+            this.lblError.Location = new System.Drawing.Point(85, 289);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(154, 14);
             this.lblError.TabIndex = 71;
@@ -196,34 +216,18 @@ namespace CapaPresentacion
             // pbLogo
             // 
             this.pbLogo.Image = global::CapaPresentacion.Properties.Resources.LogoEmpresaSinFondo12;
-            this.pbLogo.Location = new System.Drawing.Point(107, 74);
+            this.pbLogo.Location = new System.Drawing.Point(106, 63);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(120, 80);
             this.pbLogo.TabIndex = 67;
             this.pbLogo.TabStop = false;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.linkLabel1.Location = new System.Drawing.Point(131, 9);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(77, 16);
-            this.linkLabel1.TabIndex = 72;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Vista previa";
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(344, 459);
-            this.Controls.Add(this.lblRegistro);
+            this.ClientSize = new System.Drawing.Size(344, 413);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.pnlPie);
             this.Controls.Add(this.pbLogo);

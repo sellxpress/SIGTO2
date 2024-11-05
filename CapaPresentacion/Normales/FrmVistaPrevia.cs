@@ -79,6 +79,7 @@ namespace CapaPresentacion
 
             // Opción adicional para asegurar que columnas específicas se expandan, por ejemplo, para "Categoria":
             dgvProducto.Columns["Categoria"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv.RowHeadersVisible = false;
             #endregion
         }
 

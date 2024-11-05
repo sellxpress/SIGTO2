@@ -31,11 +31,28 @@ namespace CapaLogica
             this.nrocelular = nrocelular;
             this.foto = foto;
         }
+        public Persona()
+        {
+        }
         public void insertarPersona()
         {
             PersonaDTO pDto = MapearPersonaDTO();
             Datos d = new Datos();
             int filas = d.insertarPersona(pDto);
+            if (filas > 0)
+            {
+                //Se logro la consulta
+            }
+            else
+            {
+                //No se logro
+            }
+        }
+        public void actualizarPersona()
+        {
+            PersonaDTO pDto = MapearPersonaDTO();
+            Datos d = new Datos();
+            int filas = d.actualizarPersona(pDto);
             if (filas > 0)
             {
                 //Se logro la consulta

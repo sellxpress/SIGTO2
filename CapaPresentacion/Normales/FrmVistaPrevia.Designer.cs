@@ -29,9 +29,6 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVistaPrevia));
-            this.ilProductos = new System.Windows.Forms.ImageList(this.components);
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblTitulo1 = new System.Windows.Forms.Label();
@@ -46,19 +43,6 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ilProductos
-            // 
-            this.ilProductos.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilProductos.ImageStream")));
-            this.ilProductos.TransparentColor = System.Drawing.Color.Transparent;
-            this.ilProductos.Images.SetKeyName(0, "cerrarsesion.png");
-            this.ilProductos.Images.SetKeyName(1, "configuracion.png");
-            this.ilProductos.Images.SetKeyName(2, "contraseña.png");
-            this.ilProductos.Images.SetKeyName(3, "notificacion.png");
-            this.ilProductos.Images.SetKeyName(4, "notificacion1.png");
-            this.ilProductos.Images.SetKeyName(5, "usuario.png");
-            this.ilProductos.Images.SetKeyName(6, "gestionusuarios.png");
-            this.ilProductos.Images.SetKeyName(7, "monitorear.png");
             // 
             // pnlTitulo
             // 
@@ -148,13 +132,13 @@ namespace CapaPresentacion
             this.btnDetalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnDetalles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalles.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalles.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.btnDetalles.Location = new System.Drawing.Point(353, 68);
             this.btnDetalles.Name = "btnDetalles";
             this.btnDetalles.Size = new System.Drawing.Size(204, 40);
             this.btnDetalles.TabIndex = 107;
-            this.btnDetalles.Text = "Ver detalles";
+            this.btnDetalles.Text = "Detalles";
             this.btnDetalles.UseVisualStyleBackColor = false;
             this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
             // 
@@ -163,7 +147,7 @@ namespace CapaPresentacion
             this.btnRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
             this.btnRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistro.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistro.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnRegistro.Location = new System.Drawing.Point(579, 68);
             this.btnRegistro.Name = "btnRegistro";
@@ -201,7 +185,6 @@ namespace CapaPresentacion
 
         #endregion
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.ImageList ilProductos;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSalir;
         private System.Windows.Forms.DataGridView dgvProducto;

@@ -8,7 +8,7 @@ namespace CapaPresentacion
         public static FrmLogin principal;
         [STAThread]
         private static void Main()
-        {
+      {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             principal = new FrmLogin();

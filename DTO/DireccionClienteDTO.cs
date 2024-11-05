@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 
-namespace CapaLogica
+namespace DTO
 {
     public class DireccionClienteDTO
     {

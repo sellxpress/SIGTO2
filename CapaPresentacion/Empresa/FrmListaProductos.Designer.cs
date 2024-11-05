@@ -29,44 +29,26 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListaProductos));
-            this.ilProductos = new System.Windows.Forms.ImageList(this.components);
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblTitulo1 = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblCantidadProductos = new System.Windows.Forms.Label();
+            this.lblProductos = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.lblBuscar = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
-            // ilProductos
-            // 
-            this.ilProductos.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilProductos.ImageStream")));
-            this.ilProductos.TransparentColor = System.Drawing.Color.Transparent;
-            this.ilProductos.Images.SetKeyName(0, "cerrarsesion.png");
-            this.ilProductos.Images.SetKeyName(1, "configuracion.png");
-            this.ilProductos.Images.SetKeyName(2, "contraseña.png");
-            this.ilProductos.Images.SetKeyName(3, "notificacion.png");
-            this.ilProductos.Images.SetKeyName(4, "notificacion1.png");
-            this.ilProductos.Images.SetKeyName(5, "usuario.png");
-            this.ilProductos.Images.SetKeyName(6, "gestionusuarios.png");
-            this.ilProductos.Images.SetKeyName(7, "monitorear.png");
-            // 
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.pnlTitulo.Controls.Add(this.lblTitulo);
+            this.pnlTitulo.Controls.Add(this.lblTitulo1);
             this.pnlTitulo.Controls.Add(this.btnMinimizar);
             this.pnlTitulo.Controls.Add(this.btnSalir);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -76,18 +58,17 @@ namespace CapaPresentacion
             this.pnlTitulo.TabIndex = 7;
             this.pnlTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTitulo_Paint);
             // 
-            // lblTitulo
+            // lblTitulo1
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.lblTitulo.Location = new System.Drawing.Point(218, 19);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTitulo.Size = new System.Drawing.Size(256, 35);
-            this.lblTitulo.TabIndex = 63;
-            this.lblTitulo.Text = "Lista de productos";
-            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
+            this.lblTitulo1.AutoSize = true;
+            this.lblTitulo1.Font = new System.Drawing.Font("Bahnschrift", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
+            this.lblTitulo1.Location = new System.Drawing.Point(177, 9);
+            this.lblTitulo1.Name = "lblTitulo1";
+            this.lblTitulo1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblTitulo1.Size = new System.Drawing.Size(327, 45);
+            this.lblTitulo1.TabIndex = 81;
+            this.lblTitulo1.Text = "Lista de productos";
             // 
             // btnMinimizar
             // 
@@ -118,11 +99,11 @@ namespace CapaPresentacion
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(5)))), ((int)(((byte)(4)))));
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnEliminar.Location = new System.Drawing.Point(358, 87);
+            this.btnEliminar.Location = new System.Drawing.Point(242, 485);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(167, 40);
+            this.btnEliminar.Size = new System.Drawing.Size(210, 40);
             this.btnEliminar.TabIndex = 90;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -130,14 +111,14 @@ namespace CapaPresentacion
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnNuevo.Location = new System.Drawing.Point(12, 87);
+            this.btnNuevo.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnNuevo.Location = new System.Drawing.Point(449, 74);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(167, 40);
+            this.btnNuevo.Size = new System.Drawing.Size(225, 40);
             this.btnNuevo.TabIndex = 99;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -149,7 +130,7 @@ namespace CapaPresentacion
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvProducto.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.dgvProducto.Location = new System.Drawing.Point(12, 142);
+            this.dgvProducto.Location = new System.Drawing.Point(12, 120);
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.Size = new System.Drawing.Size(662, 359);
             this.dgvProducto.TabIndex = 100;
@@ -160,68 +141,45 @@ namespace CapaPresentacion
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnEditar.Location = new System.Drawing.Point(185, 87);
+            this.btnEditar.Location = new System.Drawing.Point(12, 485);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(167, 40);
+            this.btnEditar.Size = new System.Drawing.Size(210, 40);
             this.btnEditar.TabIndex = 101;
-            this.btnEditar.Text = "Detalles / Editar";
+            this.btnEditar.Text = "Editar / Detalles";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // lblNombre
+            // lblProductos
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblNombre.Location = new System.Drawing.Point(479, 516);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(147, 19);
-            this.lblNombre.TabIndex = 102;
-            this.lblNombre.Text = "Productos Totales :";
-            // 
-            // lblCantidadProductos
-            // 
-            this.lblCantidadProductos.AutoSize = true;
-            this.lblCantidadProductos.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblCantidadProductos.Location = new System.Drawing.Point(623, 516);
-            this.lblCantidadProductos.Name = "lblCantidadProductos";
-            this.lblCantidadProductos.Size = new System.Drawing.Size(18, 19);
-            this.lblCantidadProductos.TabIndex = 103;
-            this.lblCantidadProductos.Text = "0";
+            this.lblProductos.AutoSize = true;
+            this.lblProductos.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.lblProductos.Location = new System.Drawing.Point(494, 496);
+            this.lblProductos.Name = "lblProductos";
+            this.lblProductos.Size = new System.Drawing.Size(147, 19);
+            this.lblProductos.TabIndex = 102;
+            this.lblProductos.Text = "Productos Totales :";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(540, 100);
+            this.txtBuscar.Location = new System.Drawing.Point(23, 87);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(134, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(382, 20);
             this.txtBuscar.TabIndex = 104;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblBuscar.Location = new System.Drawing.Point(581, 78);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(60, 19);
-            this.lblBuscar.TabIndex = 105;
-            this.lblBuscar.Text = "Buscar";
-            this.lblBuscar.Click += new System.EventHandler(this.lblBuscar_Click);
+            this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+            this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
             // 
             // FrmListaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(686, 544);
-            this.Controls.Add(this.lblBuscar);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(686, 533);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.lblCantidadProductos);
-            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.lblProductos);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvProducto);
             this.Controls.Add(this.btnNuevo);
@@ -244,17 +202,14 @@ namespace CapaPresentacion
 
         #endregion
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.ImageList ilProductos;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSalir;
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DataGridView dgvProducto;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblCantidadProductos;
+        private System.Windows.Forms.Label lblProductos;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.Label lblTitulo1;
     }
 }

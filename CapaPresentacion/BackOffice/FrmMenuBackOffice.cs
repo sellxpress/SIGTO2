@@ -6,23 +6,17 @@ namespace CapaPresentacion
 {
     public partial class FrmMenuBackOffice : Form
     {
+        string hora;
         public FrmMenuBackOffice()
         {
             InitializeComponent();
-            lblHora.Text = DateTime.Now.ToString("HH:mm");
+            hora = DateTime.Now.ToString("HH:mm");
             string correo = Principal.principal.Correo;
             Logica logica = new Logica();
             string tipoUsuario = "Cliente";
             var info = logica.ObtenerInformacionUsuario(correo, tipoUsuario);
-            lblNombre.Text = $"{info.Nombre} {info.Apellido}";
+            lblInfo.Text = $" Sr. {info.Nombre +" "+ info.Apellido} | " + hora;
         }
-
-        private void BtnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            Principal.principal.Show();
-            this.Close();
-        }
-
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -33,24 +27,36 @@ namespace CapaPresentacion
             Application.Exit();
         }
 
-        private void btngestionarUsuarios_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMonitorearActividad_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
-
+            FrmMiUsuarioDatosBO SellXpress = new FrmMiUsuarioDatosBO();
+            SellXpress.Show();
+            this.Close();
         }
 
-        private void lblHora_Click(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
+            hora = DateTime.Now.ToString("HH:mm");
+        }
 
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            FrmListaProductosBo SellXpress = new FrmListaProductosBo();
+            SellXpress.Show();
+            this.Close();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmEleccionUsuarios SellXpress = new FrmEleccionUsuarios();
+            SellXpress.Show();
+            this.Close();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Principal.principal.Show();
+            this.Close();
         }
     }
 }

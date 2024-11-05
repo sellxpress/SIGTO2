@@ -29,14 +29,11 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMiUsuarioDireccion));
-            this.ilMiUsuarioDireccion = new System.Windows.Forms.ImageList(this.components);
             this.txtLocalidad = new System.Windows.Forms.TextBox();
             this.lblLocalidad = new System.Windows.Forms.Label();
             this.lblDepartamento = new System.Windows.Forms.Label();
             this.lbDepartamentos = new System.Windows.Forms.ListBox();
-            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblCalle = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
@@ -48,28 +45,17 @@ namespace CapaPresentacion
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
+            this.lblError = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.SuspendLayout();
             // 
-            // ilMiUsuarioDireccion
-            // 
-            this.ilMiUsuarioDireccion.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilMiUsuarioDireccion.ImageStream")));
-            this.ilMiUsuarioDireccion.TransparentColor = System.Drawing.Color.Transparent;
-            this.ilMiUsuarioDireccion.Images.SetKeyName(0, "cerrarsesion.png");
-            this.ilMiUsuarioDireccion.Images.SetKeyName(1, "configuracion.png");
-            this.ilMiUsuarioDireccion.Images.SetKeyName(2, "contraseña.png");
-            this.ilMiUsuarioDireccion.Images.SetKeyName(3, "notificacion.png");
-            this.ilMiUsuarioDireccion.Images.SetKeyName(4, "notificacion1.png");
-            this.ilMiUsuarioDireccion.Images.SetKeyName(5, "usuario.png");
-            this.ilMiUsuarioDireccion.Images.SetKeyName(6, "gestionusuarios.png");
-            this.ilMiUsuarioDireccion.Images.SetKeyName(7, "monitorear.png");
-            // 
             // txtLocalidad
             // 
             this.txtLocalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.txtLocalidad.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocalidad.ForeColor = System.Drawing.Color.Black;
             this.txtLocalidad.Location = new System.Drawing.Point(27, 106);
             this.txtLocalidad.MaxLength = 60;
             this.txtLocalidad.Name = "txtLocalidad";
@@ -83,9 +69,9 @@ namespace CapaPresentacion
             this.lblLocalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.lblLocalidad.Location = new System.Drawing.Point(24, 84);
             this.lblLocalidad.Name = "lblLocalidad";
-            this.lblLocalidad.Size = new System.Drawing.Size(80, 19);
+            this.lblLocalidad.Size = new System.Drawing.Size(101, 19);
             this.lblLocalidad.TabIndex = 75;
-            this.lblLocalidad.Text = "Localidad";
+            this.lblLocalidad.Text = "Localidad (*)";
             // 
             // lblDepartamento
             // 
@@ -94,9 +80,9 @@ namespace CapaPresentacion
             this.lblDepartamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.lblDepartamento.Location = new System.Drawing.Point(23, 149);
             this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(114, 19);
+            this.lblDepartamento.Size = new System.Drawing.Size(135, 19);
             this.lblDepartamento.TabIndex = 74;
-            this.lblDepartamento.Text = "Departamento";
+            this.lblDepartamento.Text = "Departamento (*)";
             // 
             // lbDepartamentos
             // 
@@ -123,42 +109,42 @@ namespace CapaPresentacion
             "Rocha ",
             "Lavalleja ",
             "Treinta y Tres",
-            " Río Negro y Flores"});
+            "Río Negro",
+            "Flores"});
             this.lbDepartamentos.Location = new System.Drawing.Point(27, 173);
             this.lbDepartamentos.Name = "lbDepartamentos";
             this.lbDepartamentos.Size = new System.Drawing.Size(282, 100);
             this.lbDepartamentos.TabIndex = 73;
-            this.lbDepartamentos.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // btnConfirmar
+            // btnGuardar
             // 
-            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(135)))), ((int)(((byte)(35)))));
-            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnConfirmar.Location = new System.Drawing.Point(371, 306);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(204, 40);
-            this.btnConfirmar.TabIndex = 72;
-            this.btnConfirmar.Text = "Realizar cambios";
-            this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnGuardar.Location = new System.Drawing.Point(337, 306);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(204, 40);
+            this.btnGuardar.TabIndex = 72;
+            this.btnGuardar.Text = "Realizar cambios";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnVolver.Location = new System.Drawing.Point(147, 306);
+            this.btnVolver.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnVolver.Location = new System.Drawing.Point(105, 306);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(204, 40);
             this.btnVolver.TabIndex = 69;
             this.btnVolver.Text = "Volver Atras";
             this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnRegistro_Click);
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // lblCalle
             // 
@@ -167,9 +153,9 @@ namespace CapaPresentacion
             this.lblCalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.lblCalle.Location = new System.Drawing.Point(247, 84);
             this.lblCalle.Name = "lblCalle";
-            this.lblCalle.Size = new System.Drawing.Size(47, 19);
+            this.lblCalle.Size = new System.Drawing.Size(68, 19);
             this.lblCalle.TabIndex = 49;
-            this.lblCalle.Text = "Calle";
+            this.lblCalle.Text = "Calle (*)";
             // 
             // txtNumero
             // 
@@ -180,8 +166,7 @@ namespace CapaPresentacion
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(182, 21);
             this.txtNumero.TabIndex = 60;
-            this.txtNumero.TextChanged += new System.EventHandler(this.txtNroTelefonico_TextChanged);
-            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroTelefonico_KeyPress);
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // txtCalle
             // 
@@ -192,7 +177,6 @@ namespace CapaPresentacion
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(182, 21);
             this.txtCalle.TabIndex = 50;
-            this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtReferencia
             // 
@@ -223,10 +207,9 @@ namespace CapaPresentacion
             this.lblNumero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.lblNumero.Location = new System.Drawing.Point(477, 82);
             this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(68, 19);
+            this.lblNumero.Size = new System.Drawing.Size(89, 19);
             this.lblNumero.TabIndex = 55;
-            this.lblNumero.Text = "Numero";
-            this.lblNumero.Click += new System.EventHandler(this.lblNroTelefonico_Click);
+            this.lblNumero.Text = "Numero (*)";
             // 
             // pnlTitulo
             // 
@@ -237,28 +220,28 @@ namespace CapaPresentacion
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(741, 70);
+            this.pnlTitulo.Size = new System.Drawing.Size(684, 67);
             this.pnlTitulo.TabIndex = 7;
             this.pnlTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTitulo_Paint);
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.lblTitulo.Location = new System.Drawing.Point(305, 18);
+            this.lblTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
+            this.lblTitulo.Location = new System.Drawing.Point(220, 9);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTitulo.Size = new System.Drawing.Size(136, 35);
-            this.lblTitulo.TabIndex = 63;
-            this.lblTitulo.Text = "Dirección";
-            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
+            this.lblTitulo.Size = new System.Drawing.Size(240, 48);
+            this.lblTitulo.TabIndex = 81;
+            this.lblTitulo.Text = "Mi Direccion";
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.IconoMinimizar;
-            this.btnMinimizar.Location = new System.Drawing.Point(680, 28);
+            this.btnMinimizar.Location = new System.Drawing.Point(623, 30);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(16, 16);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -270,7 +253,7 @@ namespace CapaPresentacion
             // 
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.IconoCerrar;
-            this.btnSalir.Location = new System.Drawing.Point(713, 28);
+            this.btnSalir.Location = new System.Drawing.Point(656, 30);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(16, 16);
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -278,12 +261,24 @@ namespace CapaPresentacion
             this.btnSalir.TabStop = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(5)))), ((int)(((byte)(4)))));
+            this.lblError.Location = new System.Drawing.Point(324, 349);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(230, 16);
+            this.lblError.TabIndex = 90;
+            this.lblError.Text = "Debe rellenar los campos obligatorios";
+            // 
             // FrmMiUsuarioDireccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(741, 358);
+            this.ClientSize = new System.Drawing.Size(684, 371);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.txtLocalidad);
             this.Controls.Add(this.lblLocalidad);
             this.Controls.Add(this.pnlTitulo);
@@ -291,7 +286,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.txtReferencia);
             this.Controls.Add(this.lbDepartamentos);
             this.Controls.Add(this.lblNumero);
-            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblReferencia);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.txtCalle);
@@ -301,6 +296,7 @@ namespace CapaPresentacion
             this.Name = "FrmMiUsuarioDireccion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
+            this.Load += new System.EventHandler(this.FrmMiUsuarioDireccion_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
@@ -312,15 +308,13 @@ namespace CapaPresentacion
 
         #endregion
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.ImageList ilMiUsuarioDireccion;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSalir;
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblCalle;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtCalle;
         private System.Windows.Forms.Label lblNumero;
-        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.ListBox lbDepartamentos;
         private System.Windows.Forms.Label lblDepartamento;
@@ -328,5 +322,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label lblLocalidad;
         private System.Windows.Forms.TextBox txtReferencia;
         private System.Windows.Forms.Label lblReferencia;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblError;
     }
 }

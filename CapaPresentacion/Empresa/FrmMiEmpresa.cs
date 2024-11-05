@@ -42,7 +42,6 @@ namespace CapaPresentacion
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al cargar la imagen: " + ex.Message);
                 }
             }
         }
@@ -72,13 +71,30 @@ namespace CapaPresentacion
         {
 
         }
-        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtRutaLogo_TextChanged(object sender, EventArgs e)
         {
 
         }
+        private void FrmMiEmpresaDatos_Load(object sender, EventArgs e)
+        {
+            txtRUT.Enter += (s, args) => { this.ActiveControl = null; };
+            txtNroVentas.Enter += (s, args) => { this.ActiveControl = null; };
+            txtEmail.Enter += (s, args) => { this.ActiveControl = null; };
+            lblError.Visible = false;
+        }
+
         private void btnImagen_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = "C:\\";
                 openFileDialog.Filter = "Archivos de imagen (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg";
@@ -93,71 +109,52 @@ namespace CapaPresentacion
                     // Guardar la ruta de la imagen para insertar en la base de datos
                     txtRutaLogo.Text = imagePath; // Asegúrate de tener un TextBox para almacenar la ruta
                 }
-            }
+            } 
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            FrmMenuEmpresa SellXpress = new FrmMenuEmpresa();
+            SellXpress.Show();
+            this.Close();
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            // Validar campos vacíos
             if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
-                MessageBox.Show("El nombre es un campo obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblError.Visible = true;
                 return;
             }
+            else
+            {
+                lblError.Visible = false;
+            }
 
-            // Validar que la contraseña no esté vacía
             if (string.IsNullOrWhiteSpace(txtContraseña.Text))
             {
-                MessageBox.Show("La contraseña es un campo obligatorio.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblError.Visible = true;
                 return;
             }
+            else
+            {
+                lblError.Visible = false;
+            }
 
-            // Validar que el logo y la descripción, si se proporcionan, no estén vacíos (opcional)
             string logo = string.IsNullOrWhiteSpace(txtRutaLogo.Text) ? null : txtRutaLogo.Text;
             string descripcion = string.IsNullOrWhiteSpace(txtDescripcion.Text) ? null : txtDescripcion.Text;
 
-            // Obtener los valores de los campos
             string nombreEmpresa = txtNombre.Text;
             string correo = Principal.principal.Correo;
             string contrasena = txtContraseña.Text;
-            string rutEmpresa = txtRUT.Text; 
-            long nroVentas = long.Parse(txtNroVentas.Text); 
+            string rutEmpresa = txtRUT.Text;
+            long nroVentas = long.Parse(txtNroVentas.Text);
 
-            // Crear un nuevo objeto Empresa con los datos
-            Empresa empresaActualizada = new Empresa(rutEmpresa, nombreEmpresa,correo, contrasena, nroVentas, logo, descripcion);
-            Empresa empresa = new Empresa();
+            Empresa empresaActualizada = new Empresa(rutEmpresa, nombreEmpresa, correo, contrasena, nroVentas, logo, descripcion);
             empresaActualizada.actualizarEmpresa();
-
             this.Close();
-            FrmMenuEmpresa form = new FrmMenuEmpresa();
-            form.Show();
+            FrmMenuEmpresa SellXpress = new FrmMenuEmpresa();
+            SellXpress.Show();
         }
-            private void btnVolver_Click(object sender, EventArgs e)
-        {
-            Form formulario = new FrmMenuEmpresa();
-            formulario.Show();
-            this.Close();
-        }
-
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96))
-            {
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtRutaLogo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmMiEmpresaDatos_Load(object sender, EventArgs e)
-        {
-            txtRUT.Enter += (s, args) => { this.ActiveControl = null; };
-            txtNroVentas.Enter += (s, args) => { this.ActiveControl = null; };
-            txtEmail.Enter += (s, args) => { this.ActiveControl = null; };
         }
     }
-}

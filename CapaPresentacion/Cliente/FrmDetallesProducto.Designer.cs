@@ -29,9 +29,7 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetallesProducto));
-            this.ilProductos = new System.Windows.Forms.ImageList(this.components);
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
@@ -42,7 +40,6 @@ namespace CapaPresentacion
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,24 +49,12 @@ namespace CapaPresentacion
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.btnCarrito = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ilProductos
-            // 
-            this.ilProductos.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilProductos.ImageStream")));
-            this.ilProductos.TransparentColor = System.Drawing.Color.Transparent;
-            this.ilProductos.Images.SetKeyName(0, "cerrarsesion.png");
-            this.ilProductos.Images.SetKeyName(1, "configuracion.png");
-            this.ilProductos.Images.SetKeyName(2, "contraseña.png");
-            this.ilProductos.Images.SetKeyName(3, "notificacion.png");
-            this.ilProductos.Images.SetKeyName(4, "notificacion1.png");
-            this.ilProductos.Images.SetKeyName(5, "usuario.png");
-            this.ilProductos.Images.SetKeyName(6, "gestionusuarios.png");
-            this.ilProductos.Images.SetKeyName(7, "monitorear.png");
             // 
             // pnlTitulo
             // 
@@ -87,12 +72,12 @@ namespace CapaPresentacion
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.lblTitulo.Location = new System.Drawing.Point(202, 19);
+            this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
+            this.lblTitulo.Location = new System.Drawing.Point(170, 19);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTitulo.Size = new System.Drawing.Size(326, 35);
+            this.lblTitulo.Size = new System.Drawing.Size(395, 42);
             this.lblTitulo.TabIndex = 63;
             this.lblTitulo.Text = "Informacion del Articulo";
             this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
@@ -188,21 +173,6 @@ namespace CapaPresentacion
             this.txtPrecio.Size = new System.Drawing.Size(182, 21);
             this.txtPrecio.TabIndex = 84;
             // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnVolver.Location = new System.Drawing.Point(156, 440);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(204, 40);
-            this.btnVolver.TabIndex = 87;
-            this.btnVolver.Text = "Volver Atras";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -291,17 +261,35 @@ namespace CapaPresentacion
             // 
             // btnCarrito
             // 
-            this.btnCarrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnCarrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
             this.btnCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCarrito.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCarrito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnCarrito.Location = new System.Drawing.Point(381, 440);
+            this.btnCarrito.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarrito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnCarrito.ImageKey = "(ninguno)";
+            this.btnCarrito.Location = new System.Drawing.Point(385, 440);
             this.btnCarrito.Name = "btnCarrito";
-            this.btnCarrito.Size = new System.Drawing.Size(204, 40);
-            this.btnCarrito.TabIndex = 106;
-            this.btnCarrito.Text = "Agregar al Carrito";
+            this.btnCarrito.Size = new System.Drawing.Size(180, 42);
+            this.btnCarrito.TabIndex = 110;
+            this.btnCarrito.Text = "Agregar al carrito";
             this.btnCarrito.UseVisualStyleBackColor = false;
+            this.btnCarrito.Click += new System.EventHandler(this.btnCarrito_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnEditar.ImageKey = "(ninguno)";
+            this.btnEditar.Location = new System.Drawing.Point(177, 438);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(180, 42);
+            this.btnEditar.TabIndex = 111;
+            this.btnEditar.Text = "Volver atras";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // FrmDetallesProducto
             // 
@@ -309,6 +297,7 @@ namespace CapaPresentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(748, 492);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnCarrito);
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.txtCategoria);
@@ -324,7 +313,6 @@ namespace CapaPresentacion
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDetallesProducto";
@@ -343,7 +331,6 @@ namespace CapaPresentacion
 
         #endregion
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.ImageList ilProductos;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSalir;
         private System.Windows.Forms.Label lblTitulo;
@@ -353,7 +340,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label2;
@@ -363,5 +349,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Button btnCarrito;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

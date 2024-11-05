@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaLogica
+namespace DTO
 {
    public  class ArticuloDTO
     {
@@ -38,6 +38,11 @@ namespace CapaLogica
             this.precio = precio;
             this.stock = stock;
             this.estado = estado;
+        }
+        public ArticuloDTO(int idarticulo, string nombre)
+        {
+            this.idarticulo = idarticulo;
+            this.nombre = nombre;
         }
 
         public int Idarticulo { get { return this.idarticulo; } }

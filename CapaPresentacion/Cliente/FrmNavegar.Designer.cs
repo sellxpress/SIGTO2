@@ -29,35 +29,19 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNavegar));
-            this.ilProductos = new System.Windows.Forms.ImageList(this.components);
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnSalir = new System.Windows.Forms.PictureBox();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnCarrito = new System.Windows.Forms.Button();
             this.btnDetalles = new System.Windows.Forms.Button();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnSalir = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ilProductos
-            // 
-            this.ilProductos.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilProductos.ImageStream")));
-            this.ilProductos.TransparentColor = System.Drawing.Color.Transparent;
-            this.ilProductos.Images.SetKeyName(0, "cerrarsesion.png");
-            this.ilProductos.Images.SetKeyName(1, "configuracion.png");
-            this.ilProductos.Images.SetKeyName(2, "contraseña.png");
-            this.ilProductos.Images.SetKeyName(3, "notificacion.png");
-            this.ilProductos.Images.SetKeyName(4, "notificacion1.png");
-            this.ilProductos.Images.SetKeyName(5, "usuario.png");
-            this.ilProductos.Images.SetKeyName(6, "gestionusuarios.png");
-            this.ilProductos.Images.SetKeyName(7, "monitorear.png");
             // 
             // pnlTitulo
             // 
@@ -75,63 +59,15 @@ namespace CapaPresentacion
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.lblTitulo.Location = new System.Drawing.Point(334, 9);
+            this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
+            this.lblTitulo.Location = new System.Drawing.Point(4, 9);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTitulo.Size = new System.Drawing.Size(124, 35);
-            this.lblTitulo.TabIndex = 63;
-            this.lblTitulo.Text = "Navegar";
-            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
-            // 
-            // dgvProducto
-            // 
-            this.dgvProducto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvProducto.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.dgvProducto.Location = new System.Drawing.Point(12, 120);
-            this.dgvProducto.Name = "dgvProducto";
-            this.dgvProducto.Size = new System.Drawing.Size(779, 379);
-            this.dgvProducto.TabIndex = 100;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(12, 87);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(298, 20);
-            this.txtBuscar.TabIndex = 104;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // btnCarrito
-            // 
-            this.btnCarrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCarrito.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCarrito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnCarrito.Location = new System.Drawing.Point(368, 74);
-            this.btnCarrito.Name = "btnCarrito";
-            this.btnCarrito.Size = new System.Drawing.Size(167, 40);
-            this.btnCarrito.TabIndex = 106;
-            this.btnCarrito.Text = "Agregar al carrito";
-            this.btnCarrito.UseVisualStyleBackColor = false;
-            // 
-            // btnDetalles
-            // 
-            this.btnDetalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnDetalles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalles.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnDetalles.Location = new System.Drawing.Point(581, 74);
-            this.btnDetalles.Name = "btnDetalles";
-            this.btnDetalles.Size = new System.Drawing.Size(167, 40);
-            this.btnDetalles.TabIndex = 107;
-            this.btnDetalles.Text = "Ver detalles";
-            this.btnDetalles.UseVisualStyleBackColor = false;
-            this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
+            this.lblTitulo.Size = new System.Drawing.Size(296, 42);
+            this.lblTitulo.TabIndex = 81;
+            this.lblTitulo.Text = "Buscar Productos";
+            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo1_Click);
             // 
             // btnMinimizar
             // 
@@ -157,12 +93,67 @@ namespace CapaPresentacion
             this.btnSalir.TabStop = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // dgvProducto
+            // 
+            this.dgvProducto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvProducto.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.dgvProducto.Location = new System.Drawing.Point(12, 107);
+            this.dgvProducto.Name = "dgvProducto";
+            this.dgvProducto.Size = new System.Drawing.Size(779, 420);
+            this.dgvProducto.TabIndex = 100;
+            this.dgvProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellContentClick);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.txtBuscar.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(12, 74);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(349, 20);
+            this.txtBuscar.TabIndex = 104;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+            this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
+            // 
+            // btnCarrito
+            // 
+            this.btnCarrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
+            this.btnCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarrito.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarrito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnCarrito.ImageKey = "(ninguno)";
+            this.btnCarrito.Location = new System.Drawing.Point(590, 59);
+            this.btnCarrito.Name = "btnCarrito";
+            this.btnCarrito.Size = new System.Drawing.Size(199, 42);
+            this.btnCarrito.TabIndex = 108;
+            this.btnCarrito.Text = "Agregar al carrito";
+            this.btnCarrito.UseVisualStyleBackColor = false;
+            this.btnCarrito.Click += new System.EventHandler(this.btnCarrito_Click);
+            // 
+            // btnDetalles
+            // 
+            this.btnDetalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.btnDetalles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalles.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnDetalles.Location = new System.Drawing.Point(380, 59);
+            this.btnDetalles.Name = "btnDetalles";
+            this.btnDetalles.Size = new System.Drawing.Size(204, 42);
+            this.btnDetalles.TabIndex = 109;
+            this.btnDetalles.Text = "Detalles";
+            this.btnDetalles.UseVisualStyleBackColor = false;
+            this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
+            // 
             // FrmNavegar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.ClientSize = new System.Drawing.Size(803, 511);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(803, 539);
             this.Controls.Add(this.btnDetalles);
             this.Controls.Add(this.btnCarrito);
             this.Controls.Add(this.txtBuscar);
@@ -175,9 +166,9 @@ namespace CapaPresentacion
             this.Load += new System.EventHandler(this.FrmNavegar_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,13 +176,12 @@ namespace CapaPresentacion
 
         #endregion
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.ImageList ilProductos;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSalir;
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.DataGridView dgvProducto;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnCarrito;
         private System.Windows.Forms.Button btnDetalles;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }

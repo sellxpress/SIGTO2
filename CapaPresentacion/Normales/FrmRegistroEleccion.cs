@@ -45,21 +45,28 @@ namespace CapaPresentacion
 
         private void btnEmpresa_Click(object sender, EventArgs e)
         {
-            Form formulario = new FrmRegistroEmpresa();
-            formulario.Show();
+            Form SellXpress = new FrmRegistroEmpresa();
+            SellXpress.Show();
             this.Close();
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            Form formulario = new FrmRegistroCliente();
-            formulario.Show();
+            FrmRegistroCliente SellXpress = new FrmRegistroCliente();
+            SellXpress.Show();
             this.Close();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Principal.principal.Show();
+            this.Close();
+        }
+
+        private void btnMiDireccion_Click(object sender, EventArgs e)
+        {
+            FrmRegistroEmpresa SellXpress = new FrmRegistroEmpresa();
+            SellXpress.Show();
             this.Close();
         }
     }

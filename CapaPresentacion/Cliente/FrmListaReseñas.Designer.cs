@@ -29,69 +29,52 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListaReseñas));
-            this.ilProductos = new System.Windows.Forms.ImageList(this.components);
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblTitulo1 = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
+            this.dgvValoracion = new System.Windows.Forms.DataGridView();
+            this.btnNueva = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.dgvResenas = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblCantidadProductos = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResenas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvValoracion)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ilProductos
-            // 
-            this.ilProductos.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilProductos.ImageStream")));
-            this.ilProductos.TransparentColor = System.Drawing.Color.Transparent;
-            this.ilProductos.Images.SetKeyName(0, "cerrarsesion.png");
-            this.ilProductos.Images.SetKeyName(1, "configuracion.png");
-            this.ilProductos.Images.SetKeyName(2, "contraseña.png");
-            this.ilProductos.Images.SetKeyName(3, "notificacion.png");
-            this.ilProductos.Images.SetKeyName(4, "notificacion1.png");
-            this.ilProductos.Images.SetKeyName(5, "usuario.png");
-            this.ilProductos.Images.SetKeyName(6, "gestionusuarios.png");
-            this.ilProductos.Images.SetKeyName(7, "monitorear.png");
             // 
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.pnlTitulo.Controls.Add(this.lblTitulo);
+            this.pnlTitulo.Controls.Add(this.lblTitulo1);
             this.pnlTitulo.Controls.Add(this.btnMinimizar);
             this.pnlTitulo.Controls.Add(this.btnSalir);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(686, 70);
+            this.pnlTitulo.Size = new System.Drawing.Size(549, 53);
             this.pnlTitulo.TabIndex = 7;
             this.pnlTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTitulo_Paint);
             // 
-            // lblTitulo
+            // lblTitulo1
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.lblTitulo.Location = new System.Drawing.Point(276, 18);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTitulo.Size = new System.Drawing.Size(126, 35);
-            this.lblTitulo.TabIndex = 63;
-            this.lblTitulo.Text = "Reseñas";
-            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
+            this.lblTitulo1.AutoSize = true;
+            this.lblTitulo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTitulo1.Font = new System.Drawing.Font("Bahnschrift", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
+            this.lblTitulo1.Location = new System.Drawing.Point(190, 9);
+            this.lblTitulo1.Name = "lblTitulo1";
+            this.lblTitulo1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblTitulo1.Size = new System.Drawing.Size(153, 42);
+            this.lblTitulo1.TabIndex = 82;
+            this.lblTitulo1.Text = "Reseñas";
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.IconoMinimizar;
-            this.btnMinimizar.Location = new System.Drawing.Point(625, 28);
+            this.btnMinimizar.Location = new System.Drawing.Point(482, 21);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(16, 16);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -103,7 +86,7 @@ namespace CapaPresentacion
             // 
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.IconoCerrar;
-            this.btnSalir.Location = new System.Drawing.Point(658, 28);
+            this.btnSalir.Location = new System.Drawing.Point(515, 21);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(16, 16);
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -111,105 +94,99 @@ namespace CapaPresentacion
             this.btnSalir.TabStop = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // dgvValoracion
+            // 
+            this.dgvValoracion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.dgvValoracion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvValoracion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvValoracion.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.dgvValoracion.Location = new System.Drawing.Point(12, 116);
+            this.dgvValoracion.Name = "dgvValoracion";
+            this.dgvValoracion.Size = new System.Drawing.Size(528, 363);
+            this.dgvValoracion.TabIndex = 100;
+            // 
+            // btnNueva
+            // 
+            this.btnNueva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
+            this.btnNueva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNueva.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNueva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnNueva.ImageKey = "(ninguno)";
+            this.btnNueva.Location = new System.Drawing.Point(12, 68);
+            this.btnNueva.Name = "btnNueva";
+            this.btnNueva.Size = new System.Drawing.Size(147, 42);
+            this.btnNueva.TabIndex = 109;
+            this.btnNueva.Text = "Nueva";
+            this.btnNueva.UseVisualStyleBackColor = false;
+            this.btnNueva.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(5)))), ((int)(((byte)(4)))));
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnEliminar.Location = new System.Drawing.Point(498, 87);
+            this.btnEliminar.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.btnEliminar.ImageKey = "(ninguno)";
+            this.btnEliminar.Location = new System.Drawing.Point(384, 68);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(167, 40);
-            this.btnEliminar.TabIndex = 90;
+            this.btnEliminar.Size = new System.Drawing.Size(147, 42);
+            this.btnEliminar.TabIndex = 111;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnNuevo.Location = new System.Drawing.Point(12, 87);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(167, 40);
-            this.btnNuevo.TabIndex = 99;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // dgvResenas
-            // 
-            this.dgvResenas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.dgvResenas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResenas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvResenas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.dgvResenas.Location = new System.Drawing.Point(12, 142);
-            this.dgvResenas.Name = "dgvResenas";
-            this.dgvResenas.Size = new System.Drawing.Size(662, 359);
-            this.dgvResenas.TabIndex = 100;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnEditar.Location = new System.Drawing.Point(260, 87);
+            this.btnEditar.Font = new System.Drawing.Font("Bahnschrift", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnEditar.ImageKey = "(ninguno)";
+            this.btnEditar.Location = new System.Drawing.Point(197, 68);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(167, 40);
-            this.btnEditar.TabIndex = 101;
+            this.btnEditar.Size = new System.Drawing.Size(147, 42);
+            this.btnEditar.TabIndex = 112;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // lblNombre
+            // lblCantidad
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblNombre.Location = new System.Drawing.Point(460, 516);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(163, 19);
-            this.lblNombre.TabIndex = 102;
-            this.lblNombre.Text = "Reseñas Realizadas :";
-            // 
-            // lblCantidadProductos
-            // 
-            this.lblCantidadProductos.AutoSize = true;
-            this.lblCantidadProductos.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblCantidadProductos.Location = new System.Drawing.Point(638, 516);
-            this.lblCantidadProductos.Name = "lblCantidadProductos";
-            this.lblCantidadProductos.Size = new System.Drawing.Size(18, 19);
-            this.lblCantidadProductos.TabIndex = 103;
-            this.lblCantidadProductos.Text = "0";
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.lblCantidad.Location = new System.Drawing.Point(323, 482);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(160, 19);
+            this.lblCantidad.TabIndex = 102;
+            this.lblCantidad.Text = "Reseñas realizadas :";
+            this.lblCantidad.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // FrmListaReseñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(686, 544);
-            this.Controls.Add(this.lblCantidadProductos);
-            this.Controls.Add(this.lblNombre);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(549, 514);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.dgvResenas);
-            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnNueva);
+            this.Controls.Add(this.lblCantidad);
+            this.Controls.Add(this.dgvValoracion);
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmListaReseñas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
+            this.Load += new System.EventHandler(this.FrmListaReseñas_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResenas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvValoracion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,15 +194,13 @@ namespace CapaPresentacion
 
         #endregion
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.ImageList ilProductos;
-        private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSalir;
-        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.DataGridView dgvValoracion;
+        private System.Windows.Forms.PictureBox btnMinimizar;
+        private System.Windows.Forms.Label lblTitulo1;
+        private System.Windows.Forms.Button btnNueva;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.DataGridView dgvResenas;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblCantidadProductos;
+        private System.Windows.Forms.Label lblCantidad;
     }
 }

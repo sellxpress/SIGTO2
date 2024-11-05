@@ -7,26 +7,21 @@ namespace CapaPresentacion
 {
     public partial class FrmMenuCliente : Form
     {
+        string hora;
         public FrmMenuCliente()
         {
             InitializeComponent();
-            lblHora.Text = DateTime.Now.ToString("HH:mm");
+           hora = DateTime.Now.ToString("HH:mm");
             string correo = Principal.principal.Correo;
             Logica logica = new Logica();
             string tipoUsuario = "Cliente"; 
             var info = logica.ObtenerInformacionUsuario(correo, tipoUsuario);
-            lblNombre.Text = $"{info.Nombre} {info.Apellido}";
+            lblInfo.Text = $"{info.Nombre+" "+info.Apellido} | " + hora;
         }
         private void BtnProductos_Click(object sender, EventArgs e)
         {
-            Form formulario = new FrmNavegar();
-            formulario.Show();
-            this.Close();
-        }
-
-        private void BtnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            Principal.principal.Show();
+            FrmNavegar SellXpress = new FrmNavegar();
+            SellXpress.Show();
             this.Close();
         }
 
@@ -47,27 +42,40 @@ namespace CapaPresentacion
 
         private void btnReseñas_Click(object sender, EventArgs e)
         {
-
+            FrmListaReseñas SellXpress = new FrmListaReseñas();
+            SellXpress.Show();
+            this.Close();
         }
 
         private void btnCompras_Click(object sender, EventArgs e)
         {
-
+            FrmCompras SellXpress = new FrmCompras();
+            SellXpress.Show();
+            this.Close();
         }
 
         private void btnCarrito_Click(object sender, EventArgs e)
         {
-          
+            FrmCarrtitoC SellXpress = new FrmCarrtitoC();
+            SellXpress.Show();
+            this.Close();
         }
         private void btnMiUsuario_Click(object sender, EventArgs e)
         {
-            Form formulario = new FrmMiUsuarioEleccion();
+            FrmMiUsuarioEleccion formulario = new FrmMiUsuarioEleccion();
             formulario.Show();
+            this.Close();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            lblHora.Text = DateTime.Now.ToString("HH:mm");
+            Principal.principal.Show();
+            this.Close();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            hora = DateTime.Now.ToString("HH:mm");
         }
     }
 }

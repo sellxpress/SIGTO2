@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using DTO;
 using CapaDatos;
 
-
 namespace CapaLogica
 {
     public class Carrito
@@ -22,21 +21,23 @@ namespace CapaLogica
             this.cantidadarticulos = cantidadarticulos;
             this.montototal = montototal;
             this.idarticulo = idarticulo;
-         
+
         }
-        public void insertarCarrito()
+        public Carrito()
+        { }
+        public void InsertarOActualizarCarrito(int idCliente, int cantidadArticulos, decimal montoTotal, int idArticulo)
         {
-            CarritoDTO cDto = MapearCarritoDTO();
+            CarritoDTO cDto = new CarritoDTO(idCliente, cantidadArticulos, montoTotal, idArticulo);
             Datos d = new Datos();
-              int filas = d.InsertarCarrito(cDto);
-               if (filas > 0)
-              {
-                  //Se logro la consulta
-              } 
-              else
-              {
-                  //No se logro
-              } 
+            int filas = d.InsertarOActualizarCarrito(cDto);
+            if (filas > 0)
+            {
+
+            }
+            else
+            {
+
+            }
         }
         public CarritoDTO MapearCarritoDTO()
         {

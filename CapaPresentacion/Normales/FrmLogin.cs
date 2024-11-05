@@ -85,18 +85,21 @@ namespace CapaPresentacion
                     case "Cliente":
                         FrmMenuCliente frmMenuCliente = new FrmMenuCliente();
                         frmMenuCliente.Show();
+                        txtContraseña.Clear();
                         this.Hide();
                         break;
 
                     case "Empresa":
                         FrmMenuEmpresa frmMenuEmpresa = new FrmMenuEmpresa();
                         frmMenuEmpresa.Show();
+                        txtContraseña.Clear();
                         this.Hide();
                         break;
 
                     case "Administrador":
                         FrmMenuBackOffice frmMenuBackOffice = new FrmMenuBackOffice();
                         frmMenuBackOffice.Show();
+                        txtContraseña.Clear();
                         this.Hide();
                         break;
                 }
@@ -115,6 +118,7 @@ namespace CapaPresentacion
         }
         private void lblRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            txtContraseña.Clear();
             this.Hide();
             FrmRegistroEleccion SellXpress= new FrmRegistroEleccion();
             SellXpress.Show();
@@ -122,6 +126,7 @@ namespace CapaPresentacion
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            txtContraseña.Clear();
             this.Hide();
             FrmVistaPrevia SellXpress = new FrmVistaPrevia();
             SellXpress.Show();

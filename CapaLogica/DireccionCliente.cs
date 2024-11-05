@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
+using DTO;
 
 
 namespace CapaLogica
 {
     public class DireccionCliente
     {
+        private Datos datos; 
+
         private int idcliente;
         private string calle;
         private string numero;
@@ -25,21 +28,17 @@ namespace CapaLogica
             this.localidad = localidad;
             this.departamento = departamento;
             this.referencia = referencia;
+
+            datos = new Datos();
         }
-        public void insertarDireccionCliente()
+        public DireccionCliente()
+        {   datos = new Datos(); }
+        public void GuardarDireccionCliente()
         {
-            DireccionClienteDTO dDto = MapearDireccionClienteDTO();
-            Datos d = new Datos();
-           /* int filas = d.insertarDireccionCliente(dDto);
-            if (filas > 0)
-            {
-                //Se logro la consulta
-            }
-            else
-            {
-                //No se logro
-            }*/
+            DireccionClienteDTO direccionClienteDTO = MapearDireccionClienteDTO();
+            datos.GuardarDireccionCliente(direccionClienteDTO);
         }
+
         public DireccionClienteDTO MapearDireccionClienteDTO()
         {
             DireccionClienteDTO dDTO = new DireccionClienteDTO(this.idcliente, this.calle, this.numero, this.localidad, this.departamento, this.referencia);

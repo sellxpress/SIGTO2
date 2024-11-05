@@ -47,15 +47,7 @@ namespace CapaPresentacion
         {
         }
 
-        private void lblContraseña_Click(object sender, EventArgs e)
-        {
-        }
-
         private void pnlPie_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void lblTitulo_MouseMove(object sender, MouseEventArgs e)
         {
         }
 
@@ -63,41 +55,28 @@ namespace CapaPresentacion
         {
 
         }
-
-        private void btnConfirmar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Form formulario = new FrmMenuCliente();
-            formulario.Show();
-        }
-
-        private void btnDatos_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Form formulario = new FrmMiUsuarioDatos();
-            formulario.Show();
-        }
-
-        private void btnDireccion_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Form formulario = new FrmMiUsuarioDireccion();
-            formulario.Show();
-        }
+  
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form formulario = new FrmMenuCliente();
-            formulario.Show();
+            Form SellXpress = new FrmMenuCliente();
+            SellXpress.Show();
 
         }
 
-        private void btnConfirmar_Click_1(object sender, EventArgs e)
+        private void btnMiDireccion_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form formulario = new FrmMenuCliente();
-            formulario.Show();
+            Form SellXpress = new FrmMiUsuarioDireccion();
+            SellXpress.Show();
+        }
+
+        private void btnMiPerfil_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmMiUsuarioDatos SellXpress = new FrmMiUsuarioDatos();
+            SellXpress.Show();
         }
     }
 }

@@ -184,7 +184,7 @@ namespace CapaPresentacion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Form formulario = new FrmRegistroEleccion();
+            FrmRegistroEleccion formulario = new FrmRegistroEleccion();
             formulario.Show();
             this.Close();
         }

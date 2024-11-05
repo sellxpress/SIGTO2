@@ -29,68 +29,48 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVentas));
-            this.ilProductos = new System.Windows.Forms.ImageList(this.components);
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblTitulo1 = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblCantVentas = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.lblBuscar = new System.Windows.Forms.Label();
+            this.lblVentasCompletadas = new System.Windows.Forms.Label();
+            this.lblVentasCanceladas = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
             // 
-            // ilProductos
-            // 
-            this.ilProductos.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilProductos.ImageStream")));
-            this.ilProductos.TransparentColor = System.Drawing.Color.Transparent;
-            this.ilProductos.Images.SetKeyName(0, "cerrarsesion.png");
-            this.ilProductos.Images.SetKeyName(1, "configuracion.png");
-            this.ilProductos.Images.SetKeyName(2, "contraseña.png");
-            this.ilProductos.Images.SetKeyName(3, "notificacion.png");
-            this.ilProductos.Images.SetKeyName(4, "notificacion1.png");
-            this.ilProductos.Images.SetKeyName(5, "usuario.png");
-            this.ilProductos.Images.SetKeyName(6, "gestionusuarios.png");
-            this.ilProductos.Images.SetKeyName(7, "monitorear.png");
-            // 
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.pnlTitulo.Controls.Add(this.lblTitulo);
+            this.pnlTitulo.Controls.Add(this.lblTitulo1);
             this.pnlTitulo.Controls.Add(this.btnMinimizar);
             this.pnlTitulo.Controls.Add(this.btnSalir);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(686, 70);
+            this.pnlTitulo.Size = new System.Drawing.Size(816, 56);
             this.pnlTitulo.TabIndex = 7;
-            this.pnlTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTitulo_Paint);
             // 
-            // lblTitulo
+            // lblTitulo1
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.lblTitulo.Location = new System.Drawing.Point(283, 19);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTitulo.Size = new System.Drawing.Size(102, 35);
-            this.lblTitulo.TabIndex = 63;
-            this.lblTitulo.Text = "Ventas";
-            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
+            this.lblTitulo1.AutoSize = true;
+            this.lblTitulo1.Font = new System.Drawing.Font("Bahnschrift", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(210)))), ((int)(((byte)(116)))));
+            this.lblTitulo1.Location = new System.Drawing.Point(286, 9);
+            this.lblTitulo1.Name = "lblTitulo1";
+            this.lblTitulo1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblTitulo1.Size = new System.Drawing.Size(256, 42);
+            this.lblTitulo1.TabIndex = 71;
+            this.lblTitulo1.Text = "Lista de ventas";
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.IconoMinimizar;
-            this.btnMinimizar.Location = new System.Drawing.Point(625, 28);
+            this.btnMinimizar.Location = new System.Drawing.Point(757, 23);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(16, 16);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -102,7 +82,7 @@ namespace CapaPresentacion
             // 
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.IconoCerrar;
-            this.btnSalir.Location = new System.Drawing.Point(658, 28);
+            this.btnSalir.Location = new System.Drawing.Point(788, 23);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(16, 16);
             this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -116,68 +96,49 @@ namespace CapaPresentacion
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvVentas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.dgvVentas.Location = new System.Drawing.Point(12, 142);
+            this.dgvVentas.Location = new System.Drawing.Point(6, 62);
             this.dgvVentas.Name = "dgvVentas";
-            this.dgvVentas.Size = new System.Drawing.Size(662, 359);
+            this.dgvVentas.Size = new System.Drawing.Size(798, 366);
             this.dgvVentas.TabIndex = 100;
-            this.dgvVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellContentClick);
             // 
-            // lblNombre
+            // lblVentasCompletadas
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblNombre.Location = new System.Drawing.Point(479, 516);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(117, 19);
-            this.lblNombre.TabIndex = 102;
-            this.lblNombre.Text = "Ventas Totales:";
+            this.lblVentasCompletadas.AutoSize = true;
+            this.lblVentasCompletadas.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVentasCompletadas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblVentasCompletadas.Location = new System.Drawing.Point(2, 431);
+            this.lblVentasCompletadas.Name = "lblVentasCompletadas";
+            this.lblVentasCompletadas.Size = new System.Drawing.Size(173, 23);
+            this.lblVentasCompletadas.TabIndex = 108;
+            this.lblVentasCompletadas.Text = "Venta completadas:";
+            this.lblVentasCompletadas.Click += new System.EventHandler(this.lblCantidad_Click);
             // 
-            // lblCantVentas
+            // lblVentasCanceladas
             // 
-            this.lblCantVentas.AutoSize = true;
-            this.lblCantVentas.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblCantVentas.Location = new System.Drawing.Point(623, 516);
-            this.lblCantVentas.Name = "lblCantVentas";
-            this.lblCantVentas.Size = new System.Drawing.Size(18, 19);
-            this.lblCantVentas.TabIndex = 103;
-            this.lblCantVentas.Text = "0";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(78, 100);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(134, 20);
-            this.txtBuscar.TabIndex = 104;
-            // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblBuscar.Location = new System.Drawing.Point(12, 98);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(60, 19);
-            this.lblBuscar.TabIndex = 105;
-            this.lblBuscar.Text = "Buscar";
+            this.lblVentasCanceladas.AutoSize = true;
+            this.lblVentasCanceladas.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVentasCanceladas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(5)))), ((int)(((byte)(4)))));
+            this.lblVentasCanceladas.Location = new System.Drawing.Point(545, 433);
+            this.lblVentasCanceladas.Name = "lblVentasCanceladas";
+            this.lblVentasCanceladas.Size = new System.Drawing.Size(171, 23);
+            this.lblVentasCanceladas.TabIndex = 109;
+            this.lblVentasCanceladas.Text = "Ventas canceladas:";
             // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(686, 544);
-            this.Controls.Add(this.lblBuscar);
-            this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.lblCantVentas);
-            this.Controls.Add(this.lblNombre);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(816, 465);
+            this.Controls.Add(this.lblVentasCanceladas);
+            this.Controls.Add(this.lblVentasCompletadas);
             this.Controls.Add(this.dgvVentas);
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
+            this.Load += new System.EventHandler(this.FrmNavegar_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
@@ -190,14 +151,11 @@ namespace CapaPresentacion
 
         #endregion
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.ImageList ilProductos;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSalir;
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.DataGridView dgvVentas;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblCantVentas;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.Label lblTitulo1;
+        private System.Windows.Forms.Label lblVentasCompletadas;
+        private System.Windows.Forms.Label lblVentasCanceladas;
     }
 }
